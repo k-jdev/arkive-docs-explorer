@@ -75,10 +75,10 @@ export type EntryRef = {
 };
 
 export type PopulationStatus =
-  | "empty"                  // no entries at all
-  | "awaiting_structure"     // observations exist; no journal/context entries yet
-  | "partially_populated"    // some content but minimal
-  | "populated";             // healthy density of entries
+  | "empty" // no entries at all
+  | "awaiting_structure" // observations exist; no journal/context entries yet
+  | "partially_populated" // some content but minimal
+  | "populated"; // healthy density of entries
 
 export type LoadedPractice = {
   name: string;
@@ -231,7 +231,8 @@ export async function readArkive(): Promise<ArkiveBundle> {
   // ---- Protocol auto-refresh ----
   try {
     const stored = await adapter.readEntry(uid, PATH_PROTOCOL);
-    const storedVersion = (stored?.meta as Record<string, unknown> | undefined)?.protocol_version;
+    const storedVersion = (stored?.meta as Record<string, unknown> | undefined)
+      ?.protocol_version;
     if (!stored || storedVersion !== PROTOCOL_VERSION) {
       await adapter.writeEntry(uid, {
         path: PATH_PROTOCOL,
@@ -293,12 +294,14 @@ export async function readArkive(): Promise<ArkiveBundle> {
   }
 
   // ---- §14.1-3: identity, protocol, loadup, config ----
-  const [identityEntry, protocolEntry, loadupEntry, config] = await Promise.all([
-    adapter.readEntry(uid, PATH_IDENTITY),
-    adapter.readEntry(uid, PATH_PROTOCOL),
-    adapter.readEntry(uid, PATH_LOADUP),
-    readArkiveConfig(),
-  ]);
+  const [identityEntry, protocolEntry, loadupEntry, config] = await Promise.all(
+    [
+      adapter.readEntry(uid, PATH_IDENTITY),
+      adapter.readEntry(uid, PATH_PROTOCOL),
+      adapter.readEntry(uid, PATH_LOADUP),
+      readArkiveConfig(),
+    ],
+  );
 
   // ---- §14.4-6: per-practice load ----
   const practices: LoadedPractice[] = [];
@@ -317,8 +320,15 @@ export async function readArkive(): Promise<ArkiveBundle> {
   // observation's body through memory and into the bundle.
   const streamMetas = await adapter.listMeta(uid, `${STREAM_DIR}/`);
   const sortedStream = streamMetas.sort((a, b) => (a.path < b.path ? 1 : -1));
-  const recentStreamMetas = sortedStream.slice(0, config.defaults.recent_max_entries);
-  const recent_observations = await fetchBodies(adapter, uid, recentStreamMetas);
+  const recentStreamMetas = sortedStream.slice(
+    0,
+    config.defaults.recent_max_entries,
+  );
+  const recent_observations = await fetchBodies(
+    adapter,
+    uid,
+    recentStreamMetas,
+  );
   const observation_count = streamMetas.length;
 
   // ---- Surfaced daydreams (read-only Notices) ----
@@ -333,12 +343,25 @@ export async function readArkive(): Promise<ArkiveBundle> {
 
   // Extra paths — docs/ and any other top-level folders not covered by
   // practices, stream, or daydreams. UI-only; gives the explorer a complete tree.
-  const knownPrefixes = [`${STREAM_DIR}/`, `${DAYDREAMS_DIR}/`, `${PRACTICES_DIR}/`];
+  const knownPrefixes = [
+    `${STREAM_DIR}/`,
+    `${DAYDREAMS_DIR}/`,
+    `${PRACTICES_DIR}/`,
+  ];
   const rootMetas = await adapter.listMeta(uid, "arkive/");
   const extra_paths = rootMetas
     .map((e) => e.path)
     .filter((p) => !knownPrefixes.some((prefix) => p.startsWith(prefix)))
-    .filter((p) => !["arkive/arkive.config", "arkive/arkive.index", "arkive/arkive.protocol.md", "arkive/identity.md", "arkive/loadup.md"].includes(p));
+    .filter(
+      (p) =>
+        ![
+          "arkive/arkive.config",
+          "arkive/arkive.index",
+          "arkive/arkive.protocol.md",
+          "arkive/identity.md",
+          "arkive/loadup.md",
+        ].includes(p),
+    );
 
   const routing_hints_seen: Record<string, number> = {};
   for (const e of streamMetas) {
@@ -354,16 +377,26 @@ export async function readArkive(): Promise<ArkiveBundle> {
   let index_last_updated = now.toISOString();
   if (indexEntry) {
     try {
-      const parsed = JSON.parse(indexEntry.body) as { version: number; last_updated: string };
+      const parsed = JSON.parse(indexEntry.body) as {
+        version: number;
+        last_updated: string;
+      };
       index_version = String(parsed.version);
       index_last_updated = parsed.last_updated ?? index_last_updated;
     } catch {
       // ignore — readIndex will rebuild on next read
     }
   } else {
-    const fresh = await readIndex();
-    index_version = String(fresh.version);
-    index_last_updated = fresh.last_updated;
+    try {
+      const fresh = await readIndex();
+      index_version = String(fresh.version);
+      index_last_updated = fresh.last_updated;
+    } catch (err) {
+      // Read-only filesystem (Vercel) — the index rebuild couldn't persist.
+      // The bundle still loads; graph / backlinks will be empty until a
+      // writable storage backend is connected.
+      console.error("index rebuild failed (non-fatal):", err);
+    }
   }
 
   // Emergence scan — pattern candidates + practice suggestions. Best-effort;
@@ -385,7 +418,7 @@ export async function readArkive(): Promise<ArkiveBundle> {
     observation_count,
     routing_hints_seen,
     pattern_candidates,
-    practice_suggestions
+    practice_suggestions,
   );
 
   return {
@@ -446,7 +479,9 @@ export function projectBundleForModel(b: ArkiveBundle): ArkiveBundle {
   return {
     ...b,
     loading_note: MODEL_LOADING_NOTE,
-    recent_observations: b.recent_observations.slice(0, MODEL_RECENT_OBS).map(snippetEntry),
+    recent_observations: b.recent_observations
+      .slice(0, MODEL_RECENT_OBS)
+      .map(snippetEntry),
     notices: b.notices.map((d) => ({ ...d, body: trimBody(d.body) })),
     daydream_paths: [],
     extra_paths: [],
@@ -480,7 +515,9 @@ function projectPracticeForModel(p: LoadedPractice): LoadedPractice {
   // instructions playbook + context state + pending gate). Only the bulk is
   // trimmed: recent journal → snippeted head, overflow demoted to refs;
   // all_paths is UI-only.
-  const shown = p.recent_journal.slice(0, MODEL_RECENT_JOURNAL).map(snippetEntry);
+  const shown = p.recent_journal
+    .slice(0, MODEL_RECENT_JOURNAL)
+    .map(snippetEntry);
   const overflow = p.recent_journal
     .slice(MODEL_RECENT_JOURNAL)
     .map((e) => buildEntryRef(e.path, e.meta));
@@ -499,7 +536,10 @@ function snippetEntry(e: Entry): Entry {
 function trimBody(s: string): string {
   const flat = (s ?? "").trimEnd();
   if (flat.length <= MODEL_BODY_SNIPPET) return flat;
-  return flat.slice(0, MODEL_BODY_SNIPPET).trimEnd() + "\n\n…[truncated — read_entity for full body]";
+  return (
+    flat.slice(0, MODEL_BODY_SNIPPET).trimEnd() +
+    "\n\n…[truncated — read_entity for full body]"
+  );
 }
 
 async function loadPractice(
@@ -507,7 +547,7 @@ async function loadPractice(
   uid: string,
   name: string,
   mode: "active" | "on_demand" | "private",
-  globalConfig: ArkiveConfigFile
+  globalConfig: ArkiveConfigFile,
 ): Promise<LoadedPractice> {
   const root = practiceRoot(name);
   const cfgEntry = await adapter.readEntry(uid, practiceConfigPath(name));
@@ -516,10 +556,18 @@ async function loadPractice(
   // Per-practice operational playbook (mutable). Loaded for every practice
   // regardless of mode so the UI can render it; the AI only acts on it for
   // active practices (the §0 protocol step is gated to active).
-  const instructionsEntry = await adapter.readEntry(uid, practiceInstructionsPath(name));
-  const instructions = instructionsEntry ? projectEntry(instructionsEntry) : null;
+  const instructionsEntry = await adapter.readEntry(
+    uid,
+    practiceInstructionsPath(name),
+  );
+  const instructions = instructionsEntry
+    ? projectEntry(instructionsEntry)
+    : null;
 
-  const emptyDigest: Omit<LoadedPractice, "name" | "mode" | "config" | "instructions" | "entry_count" | "all_paths"> = {
+  const emptyDigest: Omit<
+    LoadedPractice,
+    "name" | "mode" | "config" | "instructions" | "entry_count" | "all_paths"
+  > = {
     context: [],
     pending_insights: [],
     recent_journal: [],
@@ -566,14 +614,15 @@ async function loadPractice(
   const sortedJournal = journalMetas.sort((a, b) => (a.path < b.path ? 1 : -1));
 
   // Per-entity-type counts + latest_date. Meta only — no body load.
-  const byType: Record<string, { count: number; latest_date: string | null }> = {};
+  const byType: Record<string, { count: number; latest_date: string | null }> =
+    {};
   for (const e of sortedJournal) {
     const m = e.meta ?? {};
     const t = typeof m.entity_type === "string" ? m.entity_type : "unknown";
     const date =
       typeof m.created_at === "string"
         ? (m.created_at as string)
-        : e.path.match(/\d{4}-\d{2}-\d{2}/)?.[0] ?? null;
+        : (e.path.match(/\d{4}-\d{2}-\d{2}/)?.[0] ?? null);
     if (!byType[t]) byType[t] = { count: 0, latest_date: null };
     byType[t].count++;
     if (date && (!byType[t].latest_date || date > byType[t].latest_date)) {
@@ -587,16 +636,19 @@ async function loadPractice(
   const cutoffMs =
     Date.now() - globalConfig.defaults.recent_window_days * 24 * 60 * 60 * 1000;
   const inWindow = sortedJournal.filter((e) =>
-    withinCutoff(e.meta as Record<string, unknown>, e.path, cutoffMs)
+    withinCutoff(e.meta as Record<string, unknown>, e.path, cutoffMs),
   );
   const recentJournal = await fetchBodies(
     adapter,
     uid,
-    inWindow.slice(0, RECENT_JOURNAL_FULL_BODY_CAP)
+    inWindow.slice(0, RECENT_JOURNAL_FULL_BODY_CAP),
   );
   const olderJournalSummary: EntryRef[] = inWindow
     .slice(RECENT_JOURNAL_FULL_BODY_CAP)
-    .slice(0, globalConfig.defaults.recent_max_entries - RECENT_JOURNAL_FULL_BODY_CAP)
+    .slice(
+      0,
+      globalConfig.defaults.recent_max_entries - RECENT_JOURNAL_FULL_BODY_CAP,
+    )
     .map((e) => buildEntryRef(e.path, e.meta));
 
   // Skills are always paths-only — situation-triggered, never bulk-loaded.
@@ -640,7 +692,8 @@ function buildEntryRef(path: string, meta: Record<string, unknown>): EntryRef {
     path,
     entity_type: typeof m.entity_type === "string" ? m.entity_type : "unknown",
     title,
-    created_at: typeof m.created_at === "string" ? (m.created_at as string) : undefined,
+    created_at:
+      typeof m.created_at === "string" ? (m.created_at as string) : undefined,
   };
 }
 
@@ -651,10 +704,13 @@ function buildEntryRef(path: string, meta: Record<string, unknown>): EntryRef {
 async function fetchBodies(
   adapter: ReturnType<typeof storage>,
   uid: string,
-  metas: StoredEntryMeta[]
+  metas: StoredEntryMeta[],
 ): Promise<Entry[]> {
   if (metas.length === 0) return [];
-  const fulls = await adapter.readEntries(uid, metas.map((m) => m.path));
+  const fulls = await adapter.readEntries(
+    uid,
+    metas.map((m) => m.path),
+  );
   const byPath = new Map(fulls.map((f) => [f.path, f] as const));
   return metas.map((m) => {
     const full = byPath.get(m.path);
@@ -670,7 +726,7 @@ function buildCapabilityManifest(
   observation_count: number,
   observation_routing_hints: Record<string, number>,
   pattern_candidates: PatternCandidate[],
-  practice_suggestions: PracticeSuggestion[]
+  practice_suggestions: PracticeSuggestion[],
 ): CapabilityManifest {
   const installed: PracticeCapability[] = practices.map((p) => {
     const decl_tools: PracticeCapability["declared_tools"] = (
@@ -682,7 +738,7 @@ function buildCapabilityManifest(
     }));
     const journalCount = Object.values(p.journal_by_entity_type).reduce(
       (s, v) => s + v.count,
-      0
+      0,
     );
     const lastActivity =
       Object.values(p.journal_by_entity_type)
@@ -692,17 +748,25 @@ function buildCapabilityManifest(
         .pop() ?? null;
     let status: PopulationStatus = "empty";
     if (p.entry_count === 0) status = "empty";
-    else if (journalCount === 0 && p.context.length === 0) status = "awaiting_structure";
-    else if (journalCount + p.context.length < 3) status = "partially_populated";
+    else if (journalCount === 0 && p.context.length === 0)
+      status = "awaiting_structure";
+    else if (journalCount + p.context.length < 3)
+      status = "partially_populated";
     else status = "populated";
 
     return {
       name: p.name,
       mode: p.mode,
       version: p.config?.version ?? "0.0.0",
-      declared_entity_types: (p.config?.provides.journal_entity_types ?? []).map((e) => e.name),
-      declared_context_files: (p.config?.provides.context_files ?? []).map((c) => c.name),
-      declared_link_types: (p.config?.provides.link_types ?? []).map((l) => l.name),
+      declared_entity_types: (
+        p.config?.provides.journal_entity_types ?? []
+      ).map((e) => e.name),
+      declared_context_files: (p.config?.provides.context_files ?? []).map(
+        (c) => c.name,
+      ),
+      declared_link_types: (p.config?.provides.link_types ?? []).map(
+        (l) => l.name,
+      ),
       declared_tools: decl_tools,
       population: {
         status,
@@ -737,7 +801,7 @@ function stripFrontmatter(s: string): string {
 function withinCutoff(
   meta: Record<string, unknown> | undefined,
   path: string,
-  cutoffMs: number
+  cutoffMs: number,
 ): boolean {
   if (meta && typeof meta.created_at === "string") {
     const t = Date.parse(meta.created_at as string);
@@ -776,7 +840,7 @@ const CONTEXT_PLACEHOLDER_LINES = [
  */
 async function healMisroutedCoreFiles(
   adapter: ReturnType<typeof storage>,
-  uid: string
+  uid: string,
 ): Promise<void> {
   const candidates: Array<{
     misrouted: string;
@@ -806,7 +870,9 @@ async function healMisroutedCoreFiles(
   for (const c of candidates) {
     const misroutedEntry = await adapter.readEntry(uid, c.misrouted);
     if (!misroutedEntry) continue;
-    const { meta: misMeta, body: misBody } = parseFrontmatter(misroutedEntry.body);
+    const { meta: misMeta, body: misBody } = parseFrontmatter(
+      misroutedEntry.body,
+    );
     if (!misBody.trim()) {
       // Nothing real to migrate — just delete the empty misrouted file.
       await adapter.deleteEntry(uid, c.misrouted);
@@ -838,7 +904,10 @@ async function healMisroutedCoreFiles(
     };
     await adapter.writeEntry(uid, {
       path: c.canonical,
-      body: serializeEntry(meta, misBody.endsWith("\n") ? misBody : misBody + "\n"),
+      body: serializeEntry(
+        meta,
+        misBody.endsWith("\n") ? misBody : misBody + "\n",
+      ),
       meta,
     });
     await adapter.deleteEntry(uid, c.misrouted);
@@ -847,7 +916,7 @@ async function healMisroutedCoreFiles(
 
 async function healPlaceholdersInContextFiles(
   adapter: ReturnType<typeof storage>,
-  uid: string
+  uid: string,
 ): Promise<void> {
   // List meta only, then batch-read the bodies for context files alone. The
   // heal needs the body to detect a placeholder, but only context/*.md files

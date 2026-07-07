@@ -157,7 +157,8 @@ export async function rebuildIndex(): Promise<ArkiveIndex> {
     const { meta } = parseFrontmatter(e.body);
     const m = (meta ?? {}) as Record<string, unknown>;
     const node: IndexNode = {
-      entity_type: typeof m.entity_type === "string" ? m.entity_type : "unknown",
+      entity_type:
+        typeof m.entity_type === "string" ? m.entity_type : "unknown",
       practice: typeof m.practice === "string" ? m.practice : "core",
       created_at: typeof m.created_at === "string" ? m.created_at : undefined,
       outgoing: {},
@@ -190,7 +191,7 @@ export async function rebuildIndex(): Promise<ArkiveIndex> {
       const refs = collectStringRefs(v);
       if (refs.length === 0) continue;
       node.outgoing[link] = (node.outgoing[link] ?? []).concat(
-        refs.map(normalizePathRef)
+        refs.map(normalizePathRef),
       );
     }
 
@@ -205,8 +206,10 @@ export async function rebuildIndex(): Promise<ArkiveIndex> {
         .map(normalizePathRef)
         .filter((p) => knownPaths.has(p));
       if (resolved.length === 0) continue;
-      const existing = (node.outgoing as Record<string, string[] | undefined>)[key] ?? [];
-      (node.outgoing as Record<string, string[]>)[key] = existing.concat(resolved);
+      const existing =
+        (node.outgoing as Record<string, string[] | undefined>)[key] ?? [];
+      (node.outgoing as Record<string, string[]>)[key] =
+        existing.concat(resolved);
     }
   }
 
@@ -230,7 +233,9 @@ export async function rebuildIndex(): Promise<ArkiveIndex> {
 function collectStringRefs(value: unknown): string[] {
   if (typeof value === "string" && looksLikePath(value)) return [value];
   if (Array.isArray(value)) {
-    return value.filter((x): x is string => typeof x === "string" && looksLikePath(x));
+    return value.filter(
+      (x): x is string => typeof x === "string" && looksLikePath(x),
+    );
   }
   return [];
 }
@@ -253,7 +258,13 @@ export async function readIndex(): Promise<ArkiveIndex> {
     }
   }
   const fresh = await rebuildIndex();
-  await writeIndex(fresh);
+  try {
+    await writeIndex(fresh);
+  } catch {
+    // Read-only filesystem (Vercel / serverless). Rebuilding in-memory
+    // on every read is cheap when the entry count is small (the litepaper
+    // use-case — pre-seeded docs have no mutations at runtime).
+  }
   return fresh;
 }
 
@@ -282,12 +293,16 @@ export async function updateIndexForEntry(_path: string): Promise<void> {
 
 /** Skip files that don't belong in the link graph. */
 function skipFromIndex(path: string): boolean {
-  if (path === PATH_CONFIG) return true;     // pure YAML, no frontmatter
-  if (path === PATH_INDEX) return true;      // the index itself
+  if (path === PATH_CONFIG) return true; // pure YAML, no frontmatter
+  if (path === PATH_INDEX) return true; // the index itself
   if (path.startsWith("_internal/")) return true;
-  if (path.endsWith("/practice.config")) return true;  // pure YAML
+  if (path.endsWith("/practice.config")) return true; // pure YAML
   // Skip raw asset files that aren't markdown entities
-  if (!path.endsWith(".md") && path !== PATH_IDENTITY && path !== PATH_PROTOCOL) {
+  if (
+    !path.endsWith(".md") &&
+    path !== PATH_IDENTITY &&
+    path !== PATH_PROTOCOL
+  ) {
     return !path.startsWith(PRACTICES_DIR + "/");
   }
   return false;
@@ -300,17 +315,44 @@ function skipFromIndex(path: string): boolean {
 export async function buildIndex(): Promise<{
   version: 1;
   computedAt: string;
-  nodes: Array<{ path: string; type: string; title?: string; timestamp?: string }>;
+  nodes: Array<{
+    path: string;
+    type: string;
+    title?: string;
+    timestamp?: string;
+  }>;
   edges: Array<{ from: string; to: string; type: string; broken?: boolean }>;
   nodeByPath: Map<string, { path: string; type: string }>;
-  outgoingByPath: Map<string, Array<{ from: string; to: string; type: string }>>;
-  incomingByPath: Map<string, Array<{ from: string; to: string; type: string }>>;
+  outgoingByPath: Map<
+    string,
+    Array<{ from: string; to: string; type: string }>
+  >;
+  incomingByPath: Map<
+    string,
+    Array<{ from: string; to: string; type: string }>
+  >;
 }> {
   const idx = await readIndex();
-  const nodes: Array<{ path: string; type: string; title?: string; timestamp?: string }> = [];
-  const edges: Array<{ from: string; to: string; type: string; broken?: boolean }> = [];
-  const outgoingByPath = new Map<string, Array<{ from: string; to: string; type: string }>>();
-  const incomingByPath = new Map<string, Array<{ from: string; to: string; type: string }>>();
+  const nodes: Array<{
+    path: string;
+    type: string;
+    title?: string;
+    timestamp?: string;
+  }> = [];
+  const edges: Array<{
+    from: string;
+    to: string;
+    type: string;
+    broken?: boolean;
+  }> = [];
+  const outgoingByPath = new Map<
+    string,
+    Array<{ from: string; to: string; type: string }>
+  >();
+  const incomingByPath = new Map<
+    string,
+    Array<{ from: string; to: string; type: string }>
+  >();
   for (const [path, n] of Object.entries(idx.nodes)) {
     nodes.push({ path, type: n.entity_type, timestamp: n.created_at });
     for (const [type, targets] of Object.entries(n.outgoing)) {
@@ -338,16 +380,34 @@ export async function buildIndex(): Promise<{
   };
 }
 
-export type GraphEdge = { from: string; to: string; type: string; broken?: boolean };
-export type GraphNode = { path: string; type: string; title?: string; timestamp?: string };
+export type GraphEdge = {
+  from: string;
+  to: string;
+  type: string;
+  broken?: boolean;
+};
+export type GraphNode = {
+  path: string;
+  type: string;
+  title?: string;
+  timestamp?: string;
+};
 export type NodeType = string;
 export type EdgeType = UniversalLinkType;
-export type TraverseResult = { root: GraphNode | null; nodes: GraphNode[]; edges: GraphEdge[] };
+export type TraverseResult = {
+  root: GraphNode | null;
+  nodes: GraphNode[];
+  edges: GraphEdge[];
+};
 
 /** @deprecated v5: simple BFS traversal — kept for any remaining caller. */
 export function traverse(
   index: Awaited<ReturnType<typeof buildIndex>>,
-  args: { filePath: string; direction: "forward" | "backward" | "both"; depth: number }
+  args: {
+    filePath: string;
+    direction: "forward" | "backward" | "both";
+    depth: number;
+  },
 ): TraverseResult {
   const root = index.nodeByPath.get(args.filePath) ?? null;
   if (!root) return { root: null, nodes: [], edges: [] };
