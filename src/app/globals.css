@@ -1,0 +1,221 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================================
+ * Arkive design tokens — see BRAND.md for the rationale on each value.
+ * Dark mode is the brand's natural state; .light overrides for the toggle.
+ * Colors are in HSL component form (no `hsl(...)` wrapper) so Tailwind can
+ * compose them with `/<alpha>` modifiers.
+ * ========================================================================== */
+
+@layer base {
+  :root {
+    /* Dark — default */
+    --background: 0 0% 4%;               /* #0A0A0A */
+    --foreground: 0 0% 95%;              /* #F2F2F2 */
+
+    --card: 0 0% 9%;                     /* #171717 */
+    --card-foreground: 0 0% 95%;
+
+    --panel: 0 0% 7%;                    /* #121212 sidebar / secondary surfaces */
+
+    --popover: 0 0% 9%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 220 90% 57%;              /* #2E68F4 brand blue */
+    --primary-foreground: 0 0% 100%;
+
+    --agent: 196 78% 64%;                /* #5BC0EB cyan — AI moments only */
+    --agent-foreground: 0 0% 8%;
+
+    --secondary: 0 0% 13%;               /* #222222 hover / selected fill */
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 0 0% 12%;                   /* #1F1F1F */
+    --muted-foreground: 0 0% 71%;        /* #B4B4B4 */
+
+    --accent: 0 0% 13%;
+    --accent-foreground: 0 0% 95%;
+
+    --destructive: 350 89% 60%;          /* #F43F5E rose */
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 173 80% 40%;              /* #14B8A6 teal */
+    --success-foreground: 0 0% 100%;
+
+    --warning: 48 96% 47%;               /* #EAB308 cool yellow */
+    --warning-foreground: 0 0% 8%;
+
+    --info: 189 94% 43%;                 /* #06B6D4 cyan */
+    --info-foreground: 0 0% 100%;
+
+    --border: 0 0% 16%;                  /* #2A2A2A */
+    --border-subtle: 0 0% 12%;           /* #1F1F1F */
+    --input: 0 0% 12%;
+    --ring: 220 90% 57%;
+
+    --radius: 0.25rem;                   /* 4px */
+    color-scheme: dark;
+  }
+
+  .light {
+    --background: 0 0% 98%;              /* #FAFAFA */
+    --foreground: 0 0% 9%;               /* #171717 */
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 9%;
+
+    --panel: 0 0% 100%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 9%;
+
+    --primary: 0 0% 4%;                  /* black in light mode */
+    --primary-foreground: 0 0% 100%;
+
+    --agent: 192 91% 36%;                /* #0891B2 */
+    --agent-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 95%;               /* #F2F2F2 */
+    --secondary-foreground: 0 0% 9%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 40%;
+
+    --accent: 0 0% 95%;
+    --accent-foreground: 0 0% 9%;
+
+    --destructive: 350 89% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 173 80% 36%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 48 96% 47%;
+    --warning-foreground: 0 0% 8%;
+
+    --info: 189 94% 40%;
+    --info-foreground: 0 0% 100%;
+
+    --border: 0 0% 90%;
+    --border-subtle: 0 0% 95%;
+    --input: 0 0% 100%;
+    --ring: 220 90% 57%;
+    color-scheme: light;
+  }
+
+  html {
+    font-size: 100%; /* 1rem = 16px — type scale (px) and rem spacing share one base */
+  }
+
+  html, body {
+    background: hsl(var(--background));
+    color: hsl(var(--foreground));
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Default visible focus ring — the brand carries blue across both modes. */
+  :focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px hsl(var(--ring) / 0.35);
+    border-radius: var(--radius);
+  }
+
+  /* Tabular numbers for numeric mono labels (now Inter). */
+  .font-mono {
+    font-feature-settings: "tnum" 1, "zero" 1;
+  }
+  /* JetBrains Mono — paths, filenames, code, keys, addresses. */
+  .font-code {
+    font-family: var(--font-code), ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-feature-settings: "tnum" 1, "zero" 1;
+  }
+}
+
+/* ============================================================================
+ * Brand surfaces
+ * ========================================================================== */
+
+/* Hero radial backdrop for marketing / landing surfaces. Single soft glow,
+ * dark canvas — matches the imagery direction in BRAND.md §6.2 (Mode A). */
+.bg-arkive-hero {
+  background:
+    radial-gradient(900px 480px at 80% -10%, hsl(220 90% 57% / 0.18), transparent 60%),
+    radial-gradient(700px 380px at 0% 110%, hsl(196 78% 64% / 0.10), transparent 60%),
+    hsl(var(--background));
+}
+
+/* ============================================================================
+ * Lightweight markdown — kept inline so we don't pull @tailwindcss/typography.
+ * Re-themed to the brand tokens.
+ * ========================================================================== */
+
+.prose { color: hsl(var(--foreground)); line-height: 1.6; }
+.prose h1, .prose h2, .prose h3, .prose h4 {
+  font-family: var(--font-display), ui-sans-serif, system-ui;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-top: 1.4em;
+  margin-bottom: 0.5em;
+  color: hsl(var(--foreground));
+}
+.prose h1 { font-size: 1.5rem; }
+.prose h2 { font-size: 1.25rem; }
+.prose h3 { font-size: 1.05rem; }
+.prose p { margin: 0.75em 0; }
+.prose ul, .prose ol { padding-left: 1.4em; margin: 0.75em 0; }
+.prose ul { list-style: disc; }
+.prose ol { list-style: decimal; }
+.prose li { margin: 0.25em 0; }
+.prose a { color: hsl(var(--primary)); text-decoration: underline; }
+.prose strong { font-weight: 600; }
+.prose blockquote {
+  border-left: 3px solid hsl(var(--border));
+  padding-left: 0.9em;
+  color: hsl(var(--muted-foreground));
+  margin: 0.9em 0;
+}
+.prose pre {
+  background: hsl(var(--muted));
+  color: hsl(var(--foreground));
+  padding: 0.9em 1em;
+  border-radius: var(--radius);
+  overflow-x: auto;
+  font-size: 0.85em;
+  font-family: var(--font-code), ui-monospace, monospace;
+}
+.prose code {
+  font-family: var(--font-code), ui-monospace, monospace;
+  font-feature-settings: "tnum" 1;
+}
+.prose pre code { background: transparent; padding: 0; color: inherit; font-size: inherit; }
+.prose hr { border: none; border-top: 1px solid hsl(var(--border)); margin: 1.5em 0; }
+.prose table { width: 100%; border-collapse: collapse; margin: 0.9em 0; font-size: 0.9em; }
+.prose th, .prose td { border: 1px solid hsl(var(--border)); padding: 0.4em 0.6em; text-align: left; }
+.prose th { background: hsl(var(--secondary)); font-weight: 600; }
+.prose img { max-width: 100%; border-radius: var(--radius); }
+
+/* ============================================================================
+ * Arkive workspace — drift animation for the static node graph. Very slow
+ * keyframe loop nudges each label a few pixels along an organic path so the
+ * canvas doesnt feel frozen. Per spec: 20s+ cycle, subtle.
+ * ========================================================================== */
+/* Cross-file edges in the index graph — slow dash crawl so typed links read
+ * as live connections instead of frozen dotted lines. */
+@keyframes arkive-dash {
+  to { stroke-dashoffset: -16; }
+}
+.arkive-backlink {
+  animation: arkive-dash 1.4s linear infinite;
+}
+
+@keyframes arkive-drift {
+  0%   { transform: translate(-50%, -50%) translate(0px, 0px); }
+  25%  { transform: translate(-50%, -50%) translate(3px, -2px); }
+  50%  { transform: translate(-50%, -50%) translate(-1px, 4px); }
+  75%  { transform: translate(-50%, -50%) translate(-3px, -1px); }
+  100% { transform: translate(-50%, -50%) translate(0px, 0px); }
+}
+

@@ -1,0 +1,16 @@
+---
+title: Design Philosophy
+last_updated: 2026-07-06
+---
+
+# Design Philosophy
+
+The Problem section argued that vendor memory fails for a structural reason: when a single party owns the model, the memory, and the commercial relationship, its incentives diverge from the user's. Aggressive summarization and lock-in are not accidents — they are the rational behavior of a party that profits from them. A protocol that means to avoid these failures cannot simply promise better behavior; it must be built so that reproducing the failures is structurally counter-productive. Three principles guide Arkive's architecture toward that end.
+
+**The user's AI, not ours.** Arkive does not generate intelligence. It connects the user's existing AI to their arkive, providing the full context and memory structure that model needs to be useful. The user's choice of model is part of the configuration, not something Arkive supplies or controls. This is a deliberate separation of concerns: by refusing to be the intelligence layer, Arkive removes its own incentive to lock users into a particular model, and leaves the user with the full intelligence of frontier AI, applied specifically in the way they need it. The result is a system whose value comes from structuring context well, not from owning the model that reads it.
+
+**The user's data, not ours.** An arkive is a set of plain markdown files, exportable in a single folder at any time. Portable, AI-readable, collaborative as needed, and fully the user's. This is not a policy commitment that Arkive could quietly revise; it is a property of the format. Because an arkive is plain text, readable and exportable without Arkive's infrastructure, the user is never captive — a fact guaranteed by the architecture rather than by Arkive's goodwill. Ownership, here, is enforced by design — and it keeps Arkive's incentives pointed at serving the user rather than trapping them.
+
+**The user's signature, not the AI's.** Every consequential action requires the user's explicit approval. This applies across the system — state changes, behavioral updates, and anything that affects the user or alters how the connected AI acts. Insights are proposed, not applied; skills change only when the user accepts the change. In core practices that act on the outside world, the same principle governs real-world actions: in The DeFi Project, discussed later in this paper, trades are presented to the user and executed only once signed. An AI granted deep context and broad capability is only as trustworthy as the controls around it; by making user approval the gate on every consequential action, Arkive ensures that the model's growing capability never translates into autonomous authority.
+
+Taken together, the three principles describe a system designed to stay aligned with its user even as it grows more capable. The first two attack the root of the vendor-misalignment problem directly: by owning neither the model nor the data, Arkive forecloses the incentives that drive memory to decay, lock in, and isolate. The third adds what an aligned memory layer still requires once it works — a guarantee that a deeply-contextualized, highly-capable model remains under the user's control. Each principle resolves its concern by structure rather than by promise.
