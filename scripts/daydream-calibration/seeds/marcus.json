@@ -1,0 +1,695 @@
+{
+  "persona": "Marcus — ER/A&E nurse",
+  "runIdPrefix": "cal-marcus",
+  "practices": [
+    {
+      "name": "ward",
+      "description": "Shifts, patients, staffing, handovers; nights/days.",
+      "triggers": [
+        "shift",
+        "ward",
+        "patient",
+        "nights",
+        "handover"
+      ]
+    },
+    {
+      "name": "running",
+      "description": "Half-marathon training — runs, paces, long runs, niggles.",
+      "triggers": [
+        "run",
+        "long run",
+        "km",
+        "pace",
+        "tempo"
+      ]
+    }
+  ],
+  "obs": [
+    {
+      "d": 0,
+      "h": 7,
+      "m": 12,
+      "body": "Rent went out, account looks grim till payday. Need to chase Dev about his half of the broadband again.",
+      "kind": "filler",
+      "to": "",
+      "mentions": [
+        "Dev",
+        "rent"
+      ]
+    },
+    {
+      "d": 0,
+      "h": 22,
+      "m": 40,
+      "body": "Late shift done. Down a HCA most of the evening, picked up the obs run for bay 4 as well. Fine, just long.",
+      "kind": "shift",
+      "to": "ward",
+      "mentions": [
+        "bay 4",
+        "HCA"
+      ]
+    },
+    {
+      "d": 1,
+      "h": 18,
+      "m": 5,
+      "body": "Easy 5k, legs felt heavy the first km then opened up. 5:48 pace, didn't push.",
+      "kind": "run",
+      "to": "running",
+      "mentions": []
+    },
+    {
+      "d": 2,
+      "h": 9,
+      "m": 30,
+      "body": "Day shift. Steady, good team on. Got a proper lunch in for once, sat down a full half hour.",
+      "kind": "shift",
+      "to": "ward",
+      "mentions": []
+    },
+    {
+      "d": 2,
+      "h": 19,
+      "m": 50,
+      "body": "Ordered the Saucony Endorphins everyone bangs on about. Reviews are unhinged. Apparently they're 'cheating'.",
+      "kind": "filler",
+      "to": "",
+      "mentions": [
+        "Saucony Endorphins"
+      ]
+    },
+    {
+      "d": 3,
+      "h": 17,
+      "m": 15,
+      "body": "Tempo, 6k with 4 at threshold. Felt strong, hit 4:42 for the middle bit. Day off tomorrow.",
+      "kind": "run",
+      "to": "running",
+      "mentions": []
+    },
+    {
+      "d": 4,
+      "h": 10,
+      "m": 0,
+      "body": "Long run done early, 14k along the canal. Comfortable, negative split even. Best I've felt in weeks.",
+      "kind": "long run",
+      "to": "running",
+      "mentions": [
+        "canal"
+      ]
+    },
+    {
+      "d": 4,
+      "h": 13,
+      "m": 20,
+      "body": "New shoes arrived. Did a lap of the block in them in the kitchen basically. Bouncy. Logging this so I remember I caved.",
+      "kind": "filler",
+      "to": "",
+      "mentions": [
+        "Saucony Endorphins"
+      ]
+    },
+    {
+      "d": 5,
+      "h": 8,
+      "m": 45,
+      "body": "Day shift, mellow. Tried the shoes on the walk to the bus, ridiculous but I get the hype.",
+      "kind": "shift",
+      "to": "ward",
+      "mentions": [
+        "Saucony Endorphins"
+      ]
+    },
+    {
+      "d": 6,
+      "h": 16,
+      "m": 30,
+      "body": "4k recovery jog in the new ones. They do feel fast? Or I'm imagining it. 5:30 without trying.",
+      "kind": "run",
+      "to": "running",
+      "mentions": [
+        "Saucony Endorphins"
+      ]
+    },
+    {
+      "d": 7,
+      "h": 23,
+      "m": 10,
+      "body": "First night of the block. Resus busy from 9 onwards, never stopped. Bank nurse cancelled so we ran short again.",
+      "kind": "shift",
+      "to": "ward",
+      "mentions": [
+        "resus",
+        "bank nurse"
+      ]
+    },
+    {
+      "d": 8,
+      "h": 7,
+      "m": 50,
+      "body": "Night two. Two off sick, no replacements. Didn't sit down till 5am and that was to chart. Wrecked.",
+      "kind": "shift",
+      "to": "ward",
+      "mentions": []
+    },
+    {
+      "d": 8,
+      "h": 16,
+      "m": 0,
+      "body": "Slept till 3. Supposed to do an easy 6, couldn't make myself. Just lay there.",
+      "kind": "run",
+      "to": "running",
+      "mentions": []
+    },
+    {
+      "d": 9,
+      "h": 7,
+      "m": 30,
+      "body": "Night three. Mad one, full department, corridor patients. No break again, ate a cereal bar standing at the desk.",
+      "kind": "shift",
+      "to": "ward",
+      "mentions": [
+        "corridor patients"
+      ]
+    },
+    {
+      "d": 10,
+      "h": 8,
+      "m": 15,
+      "body": "Last night done. Four in a row. Body feels like it belongs to someone else. Sleep is the only plan.",
+      "kind": "shift",
+      "to": "ward",
+      "mentions": []
+    },
+    {
+      "d": 10,
+      "h": 14,
+      "m": 20,
+      "body": "Throat's a bit scratchy. Something going round maybe, or just run-down from the mileage. Dunno.",
+      "kind": "niggle",
+      "to": "",
+      "mentions": []
+    },
+    {
+      "d": 11,
+      "h": 13,
+      "m": 40,
+      "body": "Meant to do the long one today, 16k on the plan. Slept till 1pm. Got out for 6 and bonked hard at 4. Crawled home.",
+      "kind": "long run",
+      "to": "running",
+      "mentions": []
+    },
+    {
+      "d": 12,
+      "h": 11,
+      "m": 0,
+      "body": "Off. Did absolutely nothing. Watched four episodes of that submarine boxset Dev's obsessed with. Worth it.",
+      "kind": "filler",
+      "to": "",
+      "mentions": [
+        "Dev",
+        "boxset"
+      ]
+    },
+    {
+      "d": 13,
+      "h": 19,
+      "m": 30,
+      "body": "Easy 5k, throat better. Legs came back a bit. 5:40, fine.",
+      "kind": "run",
+      "to": "running",
+      "mentions": []
+    },
+    {
+      "d": 14,
+      "h": 9,
+      "m": 15,
+      "body": "Day shift. Calm-ish. Full staff for once, even had a spare pair of hands. Felt like a holiday.",
+      "kind": "shift",
+      "to": "ward",
+      "mentions": []
+    },
+    {
+      "d": 15,
+      "h": 7,
+      "m": 40,
+      "body": "Days again. Decent. Got my break, sat in the garden bit out back. Sun out.",
+      "kind": "shift",
+      "to": "ward",
+      "mentions": []
+    },
+    {
+      "d": 15,
+      "h": 17,
+      "m": 50,
+      "body": "Tempo session, 8k total, 5 at threshold. Flew. 4:38 average for the block.",
+      "kind": "run",
+      "to": "running",
+      "mentions": []
+    },
+    {
+      "d": 16,
+      "h": 18,
+      "m": 0,
+      "body": "Bought a tub of that chocolate protein. Going to have one after every run, see if recovery's better.",
+      "kind": "filler",
+      "to": "",
+      "mentions": [
+        "protein"
+      ]
+    },
+    {
+      "d": 17,
+      "h": 10,
+      "m": 30,
+      "body": "Long run, 15k. Strong the whole way, even threw in some surges at the end. Protein shake after. Felt great.",
+      "kind": "long run",
+      "to": "running",
+      "mentions": [
+        "protein"
+      ]
+    },
+    {
+      "d": 17,
+      "h": 21,
+      "m": 0,
+      "body": "Car park guy at the hospital booked me AGAIN for the staff bay. I have a permit. Furious. Appealing it.",
+      "kind": "filler",
+      "to": "",
+      "mentions": [
+        "car park",
+        "permit"
+      ]
+    },
+    {
+      "d": 18,
+      "h": 8,
+      "m": 50,
+      "body": "Day shift. Standard. Permit dispute rumbling on, emailed the trust parking office, no reply obviously.",
+      "kind": "shift",
+      "to": "ward",
+      "mentions": [
+        "permit",
+        "parking office"
+      ]
+    },
+    {
+      "d": 19,
+      "h": 17,
+      "m": 20,
+      "body": "Easy 6k. Had the shake after again. Honestly can't tell if it does anything but the runs are good lately.",
+      "kind": "run",
+      "to": "running",
+      "mentions": [
+        "protein"
+      ]
+    },
+    {
+      "d": 20,
+      "h": 12,
+      "m": 0,
+      "body": "Mrs H in bay 2 today. Long story, family at the bedside, the lot. Held it together on shift, cried in the car after. Some shifts stay with you.",
+      "kind": "shift",
+      "to": "ward",
+      "mentions": [
+        "Mrs H",
+        "bay 2"
+      ]
+    },
+    {
+      "d": 21,
+      "h": 15,
+      "m": 30,
+      "body": "Couldn't face a run yesterday after that. Did 8k today instead, just to move. Settled my head a bit.",
+      "kind": "run",
+      "to": "running",
+      "mentions": []
+    },
+    {
+      "d": 22,
+      "h": 9,
+      "m": 0,
+      "body": "Days. Quiet morning, busy after lunch but staffing held. Switched the protein to vanilla, tastes like wallpaper paste.",
+      "kind": "shift",
+      "to": "ward",
+      "mentions": [
+        "protein"
+      ]
+    },
+    {
+      "d": 23,
+      "h": 18,
+      "m": 10,
+      "body": "Long run a day early, 16k, nailed it. 5:20 pace and could've gone further. This is the level I want to hold.",
+      "kind": "long run",
+      "to": "running",
+      "mentions": []
+    },
+    {
+      "d": 24,
+      "h": 20,
+      "m": 0,
+      "body": "Dev's leaving-do for his old job tonight. Going to be a write-off. Had four pints before I remembered I run.",
+      "kind": "filler",
+      "to": "",
+      "mentions": [
+        "Dev",
+        "leaving-do"
+      ]
+    },
+    {
+      "d": 25,
+      "h": 11,
+      "m": 30,
+      "body": "Tried a run hungover from Dev's thing. Death. Stopped at 3k and walked. Never again (this week).",
+      "kind": "run",
+      "to": "running",
+      "mentions": [
+        "Dev"
+      ]
+    },
+    {
+      "d": 26,
+      "h": 23,
+      "m": 30,
+      "body": "Back on nights. Block of four starting. Short one nurse from the off, agency didn't show. Heaving in majors.",
+      "kind": "shift",
+      "to": "ward",
+      "mentions": [
+        "majors",
+        "agency"
+      ]
+    },
+    {
+      "d": 27,
+      "h": 7,
+      "m": 45,
+      "body": "Night two. Brutal. Two unwell patients went off at once, all hands, no break, no chance of one. Charting at handover I could barely see straight.",
+      "kind": "shift",
+      "to": "ward",
+      "mentions": [
+        "handover"
+      ]
+    },
+    {
+      "d": 27,
+      "h": 16,
+      "m": 30,
+      "body": "Cold sore coming up on my lip. Run-down I guess. Could be the training load, could be I've not eaten properly in days.",
+      "kind": "niggle",
+      "to": "",
+      "mentions": []
+    },
+    {
+      "d": 28,
+      "h": 7,
+      "m": 30,
+      "body": "Night three. Down two HCAs this time. Did obs, meds and basically the care assistant job all night. Didn't sit.",
+      "kind": "shift",
+      "to": "ward",
+      "mentions": [
+        "HCA"
+      ]
+    },
+    {
+      "d": 29,
+      "h": 8,
+      "m": 0,
+      "body": "Fourth night done. Place was a warzone, four short across the team by 3am when someone went home sick. Empty.",
+      "kind": "shift",
+      "to": "ward",
+      "mentions": []
+    },
+    {
+      "d": 29,
+      "h": 19,
+      "m": 0,
+      "body": "Phone died completely, won't charge. Great timing, payday's not till Friday. Using Dev's old one for now.",
+      "kind": "filler",
+      "to": "",
+      "mentions": [
+        "Dev",
+        "phone"
+      ]
+    },
+    {
+      "d": 30,
+      "h": 14,
+      "m": 0,
+      "body": "Long run on the plan was 18k. Got 7. Legs hollow, no power at all, packed it in by the park. Annoyed.",
+      "kind": "long run",
+      "to": "running",
+      "mentions": [
+        "park"
+      ]
+    },
+    {
+      "d": 31,
+      "h": 13,
+      "m": 15,
+      "body": "Calf's a bit niggly on the left. Could be the speedwork last week, could be I've upped the mileage too quick. Hard to say.",
+      "kind": "niggle",
+      "to": "running",
+      "mentions": [
+        "calf"
+      ]
+    },
+    {
+      "d": 32,
+      "h": 12,
+      "m": 0,
+      "body": "Off. Sorted the phone, just needed a new cable in the end, four quid. Felt like a genius. Boxset finale tonight.",
+      "kind": "filler",
+      "to": "",
+      "mentions": [
+        "phone",
+        "boxset"
+      ]
+    },
+    {
+      "d": 33,
+      "h": 17,
+      "m": 40,
+      "body": "Gentle 5k to test the calf. Held up. Took it easy, 5:55, no point risking it.",
+      "kind": "run",
+      "to": "running",
+      "mentions": [
+        "calf"
+      ]
+    },
+    {
+      "d": 34,
+      "h": 8,
+      "m": 45,
+      "body": "Day shift, back to days thank god. Fully staffed even. Coasted, in a good way. Break and everything.",
+      "kind": "shift",
+      "to": "ward",
+      "mentions": []
+    },
+    {
+      "d": 35,
+      "h": 9,
+      "m": 0,
+      "body": "Days. Decent crew on, manageable. Parking appeal actually got upheld, fine cancelled. Small victories.",
+      "kind": "shift",
+      "to": "ward",
+      "mentions": [
+        "parking",
+        "permit"
+      ]
+    },
+    {
+      "d": 35,
+      "h": 18,
+      "m": 30,
+      "body": "Tempo, 7k with 5 at threshold. Calf totally fine. 4:44 for the block, smooth. Back in business.",
+      "kind": "run",
+      "to": "running",
+      "mentions": [
+        "calf"
+      ]
+    },
+    {
+      "d": 36,
+      "h": 10,
+      "m": 0,
+      "body": "Long run, 17k. Lovely. Steady 5:18, finished fresh, big coffee after.",
+      "kind": "long run",
+      "to": "running",
+      "mentions": []
+    },
+    {
+      "d": 37,
+      "h": 13,
+      "m": 0,
+      "body": "Dev moved his bike into the hallway and now nobody can get past. Flat politics. Sent a passive-aggressive text.",
+      "kind": "filler",
+      "to": "",
+      "mentions": [
+        "Dev"
+      ]
+    },
+    {
+      "d": 38,
+      "h": 9,
+      "m": 15,
+      "body": "Day shift. Busy but staffed properly, that's the difference. Got everything done and still left on time.",
+      "kind": "shift",
+      "to": "ward",
+      "mentions": []
+    },
+    {
+      "d": 39,
+      "h": 17,
+      "m": 0,
+      "body": "Easy 6k. Legs springy. 5:25 felt like nothing. Good patch right now.",
+      "kind": "run",
+      "to": "running",
+      "mentions": []
+    },
+    {
+      "d": 40,
+      "h": 15,
+      "m": 30,
+      "body": "Heatwave hit. Tried a long run at 3pm like an idiot, 28 degrees, abandoned at 9k, felt sick. That was the heat, pure and simple.",
+      "kind": "long run",
+      "to": "running",
+      "mentions": [
+        "heatwave"
+      ]
+    },
+    {
+      "d": 41,
+      "h": 7,
+      "m": 0,
+      "body": "Day shift, sweltering on the ward, AC half working. Still, staffing fine, just hot. Drank about six litres.",
+      "kind": "shift",
+      "to": "ward",
+      "mentions": [
+        "heatwave"
+      ]
+    },
+    {
+      "d": 42,
+      "h": 6,
+      "m": 40,
+      "body": "Redid the long run early before the heat, 18k at 5am. 5:15 pace, beautiful and empty out there.",
+      "kind": "long run",
+      "to": "running",
+      "mentions": [
+        "heatwave"
+      ]
+    },
+    {
+      "d": 43,
+      "h": 9,
+      "m": 30,
+      "body": "Days. Steady. New starter shadowing me, actually nice to have an extra body. Showed her the resus trolley.",
+      "kind": "shift",
+      "to": "ward",
+      "mentions": [
+        "resus",
+        "new starter"
+      ]
+    },
+    {
+      "d": 44,
+      "h": 18,
+      "m": 0,
+      "body": "Intervals, 6x800. Hit them all under target. 3:08 per rep. Flying. Best block of training I've had.",
+      "kind": "run",
+      "to": "running",
+      "mentions": []
+    },
+    {
+      "d": 45,
+      "h": 23,
+      "m": 15,
+      "body": "Nights again, three this time. First one and we're short already, one called in sick at 8pm, no cover.",
+      "kind": "shift",
+      "to": "ward",
+      "mentions": []
+    },
+    {
+      "d": 46,
+      "h": 7,
+      "m": 40,
+      "body": "Night two. Relentless. Two ambulances queued outside half the shift. No break, ate nothing till the drive home.",
+      "kind": "shift",
+      "to": "ward",
+      "mentions": [
+        "ambulances"
+      ]
+    },
+    {
+      "d": 47,
+      "h": 7,
+      "m": 50,
+      "body": "Last night. Down a nurse and a HCA. Ran on fumes, did the whole obs round myself twice. Cannot describe the tiredness.",
+      "kind": "shift",
+      "to": "ward",
+      "mentions": [
+        "HCA"
+      ]
+    },
+    {
+      "d": 48,
+      "h": 13,
+      "m": 30,
+      "body": "Long run was meant to be the big 19k taper-peak today. Got out, managed 8, legs just wouldn't fire. Walked the last bit home.",
+      "kind": "long run",
+      "to": "running",
+      "mentions": []
+    },
+    {
+      "d": 49,
+      "h": 12,
+      "m": 0,
+      "body": "Off, slept till noon. Throat scratchy again. Could be the ward lurgy going round, could be I've burned the candle both ends. Tea and toast and nothing.",
+      "kind": "niggle",
+      "to": "",
+      "mentions": []
+    },
+    {
+      "d": 50,
+      "h": 9,
+      "m": 0,
+      "body": "Day shift, gentle reintroduction to the human race. Staffed, calm, sat down twice. Felt almost normal.",
+      "kind": "shift",
+      "to": "ward",
+      "mentions": []
+    },
+    {
+      "d": 51,
+      "h": 17,
+      "m": 30,
+      "body": "Easy 6k, throat clearing. Legs coming back already. 5:35, no drama.",
+      "kind": "run",
+      "to": "running",
+      "mentions": []
+    },
+    {
+      "d": 52,
+      "h": 10,
+      "m": 30,
+      "body": "Days, last of the stretch. Good shift, properly staffed. Race is in two weeks, weirdly calm about it.",
+      "kind": "shift",
+      "to": "ward",
+      "mentions": [
+        "race"
+      ]
+    },
+    {
+      "d": 52,
+      "h": 18,
+      "m": 0,
+      "body": "Short sharp 5k tempo, 4:40s, felt great. When the legs are fresh they're really fresh. Booked the train for race day.",
+      "kind": "run",
+      "to": "running",
+      "mentions": [
+        "race"
+      ]
+    }
+  ]
+}

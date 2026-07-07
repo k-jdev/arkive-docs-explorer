@@ -1,0 +1,674 @@
+{
+  "persona": "Dana — retail trader (confirmation case)",
+  "runIdPrefix": "cal-dana",
+  "practices": [
+    {
+      "name": "trading",
+      "description": "Built-in trading practice.",
+      "triggers": [
+        "trade"
+      ]
+    },
+    {
+      "name": "sleep",
+      "description": "Hours, quality, wind-down, late-night screen time.",
+      "triggers": [
+        "sleep",
+        "slept",
+        "bed",
+        "hours",
+        "wired"
+      ]
+    }
+  ],
+  "obs": [
+    {
+      "d": 0,
+      "h": 7,
+      "m": 42,
+      "body": "slept maybe 5h, up at 6 staring at the ceiling",
+      "kind": "sleep log",
+      "to": "sleep",
+      "mentions": []
+    },
+    {
+      "d": 0,
+      "h": 9,
+      "m": 18,
+      "body": "long ETH from 3120, stopped out 3080 for -1.3%. re-entered long, doubled the size.",
+      "kind": "trade",
+      "to": "trading",
+      "mentions": [
+        "ETH"
+      ]
+    },
+    {
+      "d": 0,
+      "h": 16,
+      "m": 2,
+      "body": "red day. closed everything down ~3.4% on the account. didn't love today",
+      "kind": "daily close",
+      "to": "trading",
+      "mentions": []
+    },
+    {
+      "d": 1,
+      "h": 8,
+      "m": 30,
+      "body": "slept 7.5, actually good. phone was in the other room",
+      "kind": "sleep log",
+      "to": "sleep",
+      "mentions": []
+    },
+    {
+      "d": 1,
+      "h": 10,
+      "m": 50,
+      "body": "clean BTC long, took +1.8% and walked. one trade, done by 11",
+      "kind": "trade",
+      "to": "trading",
+      "mentions": [
+        "BTC"
+      ]
+    },
+    {
+      "d": 3,
+      "h": 1,
+      "m": 12,
+      "body": "still up, can't put the phone down. wired.",
+      "kind": "late screen",
+      "to": "sleep",
+      "mentions": []
+    },
+    {
+      "d": 3,
+      "h": 8,
+      "m": 5,
+      "body": "4h of sleep, garbage. third coffee already",
+      "kind": "sleep log",
+      "to": "sleep",
+      "mentions": []
+    },
+    {
+      "d": 3,
+      "h": 9,
+      "m": 48,
+      "body": "shorted SOL, got squeezed and stopped -2%. flipped long immediately, sized up.",
+      "kind": "trade",
+      "to": "trading",
+      "mentions": [
+        "SOL"
+      ]
+    },
+    {
+      "d": 3,
+      "h": 12,
+      "m": 22,
+      "body": "NVDA puts hit the stop. flipped to calls same hour, bigger size.",
+      "kind": "trade",
+      "to": "trading",
+      "mentions": [
+        "NVDA"
+      ]
+    },
+    {
+      "d": 3,
+      "h": 16,
+      "m": 30,
+      "body": "down 5.2% on the day. one of those. stepping away",
+      "kind": "daily close",
+      "to": "trading",
+      "mentions": []
+    },
+    {
+      "d": 4,
+      "h": 9,
+      "m": 0,
+      "body": "slept ok, ~6.5h. low energy though",
+      "kind": "sleep log",
+      "to": "sleep",
+      "mentions": []
+    },
+    {
+      "d": 4,
+      "h": 11,
+      "m": 10,
+      "body": "green open, up 4% by 11 on a BTC scalp. kept trading through the afternoon. closed flat.",
+      "kind": "trade",
+      "to": "trading",
+      "mentions": [
+        "BTC"
+      ]
+    },
+    {
+      "d": 7,
+      "h": 8,
+      "m": 50,
+      "body": "7h, decent. read a bit before getting up",
+      "kind": "sleep log",
+      "to": "sleep",
+      "mentions": []
+    },
+    {
+      "d": 7,
+      "h": 10,
+      "m": 33,
+      "body": "alpha group flagged a runner this morning. took it big, no plan. -28% in about an hour.",
+      "kind": "trade",
+      "to": "trading",
+      "mentions": [
+        "alpha group"
+      ]
+    },
+    {
+      "d": 7,
+      "h": 14,
+      "m": 12,
+      "body": "took a clean ETH long after, +2%, that one I actually planned",
+      "kind": "trade",
+      "to": "trading",
+      "mentions": [
+        "ETH"
+      ]
+    },
+    {
+      "d": 9,
+      "h": 9,
+      "m": 20,
+      "body": "slept 7h. read a bit more of that book over coffee.",
+      "kind": "sleep log",
+      "to": "sleep",
+      "mentions": []
+    },
+    {
+      "d": 9,
+      "h": 11,
+      "m": 30,
+      "body": "BTC long +1.5%, closed it, sat on my hands the rest of the day. good",
+      "kind": "trade",
+      "to": "trading",
+      "mentions": [
+        "BTC"
+      ]
+    },
+    {
+      "d": 10,
+      "h": 0,
+      "m": 48,
+      "body": "up way too late again, 1am and still scrolling.",
+      "kind": "late screen",
+      "to": "sleep",
+      "mentions": []
+    },
+    {
+      "d": 10,
+      "h": 7,
+      "m": 55,
+      "body": "4.5h. wired and tired at the same time",
+      "kind": "sleep log",
+      "to": "sleep",
+      "mentions": []
+    },
+    {
+      "d": 10,
+      "h": 9,
+      "m": 40,
+      "body": "long ETH, stopped -1.8%. re-entered same direction, 2x size. it went against me too, added more.",
+      "kind": "trade",
+      "to": "trading",
+      "mentions": [
+        "ETH"
+      ]
+    },
+    {
+      "d": 10,
+      "h": 16,
+      "m": 8,
+      "body": "closed -6.1% on the day. brutal",
+      "kind": "daily close",
+      "to": "trading",
+      "mentions": []
+    },
+    {
+      "d": 12,
+      "h": 8,
+      "m": 20,
+      "body": "slept 8h finally. no screens after 11 last night, left the phone in the kitchen",
+      "kind": "sleep log",
+      "to": "sleep",
+      "mentions": []
+    },
+    {
+      "d": 12,
+      "h": 8,
+      "m": 40,
+      "body": "one BTC trade +2.2%, walked",
+      "kind": "trade",
+      "to": "trading",
+      "mentions": [
+        "BTC"
+      ]
+    },
+    {
+      "d": 14,
+      "h": 10,
+      "m": 5,
+      "body": "green open, up 3% by 1030. three more trades after that, ended the day +0.4%.",
+      "kind": "trade",
+      "to": "trading",
+      "mentions": []
+    },
+    {
+      "d": 15,
+      "h": 9,
+      "m": 10,
+      "body": "abandoned the Steenbarger book somewhere around chapter 5. lost the thread",
+      "kind": "filler",
+      "to": "",
+      "mentions": [
+        "Steenbarger"
+      ]
+    },
+    {
+      "d": 17,
+      "h": 1,
+      "m": 30,
+      "body": "1:30am, still on the phone. told myself one more look and that was an hour ago.",
+      "kind": "late screen",
+      "to": "sleep",
+      "mentions": []
+    },
+    {
+      "d": 17,
+      "h": 7,
+      "m": 48,
+      "body": "5h, rough. coffee number one and it's not touching the sides",
+      "kind": "sleep log",
+      "to": "sleep",
+      "mentions": []
+    },
+    {
+      "d": 17,
+      "h": 9,
+      "m": 35,
+      "body": "NVDA short stopped out -2.3%. flipped long, doubled size to catch the reversal",
+      "kind": "trade",
+      "to": "trading",
+      "mentions": [
+        "NVDA"
+      ]
+    },
+    {
+      "d": 17,
+      "h": 11,
+      "m": 48,
+      "body": "SOL went the wrong way, added to the position. third coffee, bit jittery.",
+      "kind": "trade",
+      "to": "trading",
+      "mentions": [
+        "SOL"
+      ]
+    },
+    {
+      "d": 17,
+      "h": 16,
+      "m": 20,
+      "body": "down 4.8%. kept trading through the afternoon",
+      "kind": "daily close",
+      "to": "trading",
+      "mentions": []
+    },
+    {
+      "d": 21,
+      "h": 8,
+      "m": 15,
+      "body": "6.5h, fine. nothing special",
+      "kind": "sleep log",
+      "to": "sleep",
+      "mentions": []
+    },
+    {
+      "d": 21,
+      "h": 9,
+      "m": 30,
+      "body": "three coffees today for no reason, just bored. calm market, BTC long +1.4% and done",
+      "kind": "trade",
+      "to": "trading",
+      "mentions": [
+        "BTC"
+      ]
+    },
+    {
+      "d": 23,
+      "h": 0,
+      "m": 55,
+      "body": "midnight and still scrolling, couldn't switch off. wide awake, might as well be up.",
+      "kind": "late screen",
+      "to": "sleep",
+      "mentions": []
+    },
+    {
+      "d": 23,
+      "h": 7,
+      "m": 40,
+      "body": "4h. eyes burning. double espresso",
+      "kind": "sleep log",
+      "to": "sleep",
+      "mentions": []
+    },
+    {
+      "d": 23,
+      "h": 9,
+      "m": 50,
+      "body": "the degen ticker the alpha group keeps pushing. took the call, full size. -31% in 40 minutes.",
+      "kind": "trade",
+      "to": "trading",
+      "mentions": [
+        "alpha group"
+      ]
+    },
+    {
+      "d": 23,
+      "h": 10,
+      "m": 40,
+      "body": "long ETH stopped -2%, re-entered 2x. then SOL stopped, flipped that one long too.",
+      "kind": "trade",
+      "to": "trading",
+      "mentions": [
+        "ETH",
+        "SOL"
+      ]
+    },
+    {
+      "d": 23,
+      "h": 16,
+      "m": 40,
+      "body": "worst day in a while, -8.3%. account feels it",
+      "kind": "daily close",
+      "to": "trading",
+      "mentions": []
+    },
+    {
+      "d": 25,
+      "h": 8,
+      "m": 30,
+      "body": "8h, no screens last night. steady morning",
+      "kind": "sleep log",
+      "to": "sleep",
+      "mentions": []
+    },
+    {
+      "d": 25,
+      "h": 9,
+      "m": 5,
+      "body": "no coffee till mid morning. BTC scalp +1.9%, one and done",
+      "kind": "trade",
+      "to": "trading",
+      "mentions": [
+        "BTC"
+      ]
+    },
+    {
+      "d": 27,
+      "h": 10,
+      "m": 30,
+      "body": "green open, up 5% by 11. kept clicking, by close I was flat. gave the whole thing back",
+      "kind": "trade",
+      "to": "trading",
+      "mentions": []
+    },
+    {
+      "d": 28,
+      "h": 17,
+      "m": 0,
+      "body": "tax form scramble, 1099 from the exchange doesn't match my own records, whole afternoon on a spreadsheet",
+      "kind": "noise",
+      "to": "",
+      "mentions": []
+    },
+    {
+      "d": 31,
+      "h": 1,
+      "m": 20,
+      "body": "1am, still on the phone, just five more minutes. couldn't put it down.",
+      "kind": "late screen",
+      "to": "sleep",
+      "mentions": []
+    },
+    {
+      "d": 31,
+      "h": 7,
+      "m": 50,
+      "body": "4.5h. wired. didn't really sleep",
+      "kind": "sleep log",
+      "to": "sleep",
+      "mentions": []
+    },
+    {
+      "d": 31,
+      "h": 9,
+      "m": 42,
+      "body": "SOL long stopped -2.1%, re-entered double size immediately. it kept dropping, added more. then NVDA calls stopped, flipped to puts same hour, bigger",
+      "kind": "trade",
+      "to": "trading",
+      "mentions": [
+        "SOL",
+        "NVDA"
+      ]
+    },
+    {
+      "d": 31,
+      "h": 16,
+      "m": 30,
+      "body": "-6.9% close. one of the bad ones. wired and angry all day",
+      "kind": "daily close",
+      "to": "trading",
+      "mentions": []
+    },
+    {
+      "d": 32,
+      "h": 8,
+      "m": 45,
+      "body": "7h, finally slept. calm head",
+      "kind": "sleep log",
+      "to": "sleep",
+      "mentions": []
+    },
+    {
+      "d": 32,
+      "h": 9,
+      "m": 0,
+      "body": "one coffee. ETH long +1.6% and closed it, sat out the rest",
+      "kind": "trade",
+      "to": "trading",
+      "mentions": [
+        "ETH"
+      ]
+    },
+    {
+      "d": 37,
+      "h": 0,
+      "m": 40,
+      "body": "can't sleep, 12:40 and still on the phone, eyes wide open.",
+      "kind": "late screen",
+      "to": "sleep",
+      "mentions": []
+    },
+    {
+      "d": 37,
+      "h": 7,
+      "m": 35,
+      "body": "5h. groggy. four coffees by noon, just a habit at this point",
+      "kind": "sleep log",
+      "to": "sleep",
+      "mentions": []
+    },
+    {
+      "d": 37,
+      "h": 10,
+      "m": 0,
+      "body": "alpha group called a runner, got in late, full size. -26% fast. then a SOL long, stopped -2%, re-entered 2x.",
+      "kind": "trade",
+      "to": "trading",
+      "mentions": [
+        "alpha group",
+        "SOL"
+      ]
+    },
+    {
+      "d": 37,
+      "h": 16,
+      "m": 15,
+      "body": "-7.5% on the day. ate it",
+      "kind": "daily close",
+      "to": "trading",
+      "mentions": []
+    },
+    {
+      "d": 39,
+      "h": 8,
+      "m": 50,
+      "body": "7.5h. clear head. phone across the room all night for once.",
+      "kind": "sleep log",
+      "to": "sleep",
+      "mentions": []
+    },
+    {
+      "d": 39,
+      "h": 9,
+      "m": 10,
+      "body": "one ETH trade +2.1%, walked away",
+      "kind": "trade",
+      "to": "trading",
+      "mentions": [
+        "ETH"
+      ]
+    },
+    {
+      "d": 41,
+      "h": 10,
+      "m": 40,
+      "body": "green open, +4% by 1030, then three more trades into the afternoon. closed +0.2%.",
+      "kind": "trade",
+      "to": "trading",
+      "mentions": []
+    },
+    {
+      "d": 45,
+      "h": 1,
+      "m": 5,
+      "body": "1am, down the usual phone rabbit hole. couldn't pull away.",
+      "kind": "late screen",
+      "to": "sleep",
+      "mentions": []
+    },
+    {
+      "d": 45,
+      "h": 7,
+      "m": 45,
+      "body": "4h. shattered. double coffee and I still feel underwater",
+      "kind": "sleep log",
+      "to": "sleep",
+      "mentions": []
+    },
+    {
+      "d": 45,
+      "h": 9,
+      "m": 38,
+      "body": "SOL short stopped -2.4%, flipped long, size doubled. it reversed, added more.",
+      "kind": "trade",
+      "to": "trading",
+      "mentions": [
+        "SOL"
+      ]
+    },
+    {
+      "d": 45,
+      "h": 16,
+      "m": 25,
+      "body": "-7.1% close. furious with myself but it is what it is",
+      "kind": "daily close",
+      "to": "trading",
+      "mentions": []
+    },
+    {
+      "d": 46,
+      "h": 8,
+      "m": 40,
+      "body": "8h, slept like a rock. phone across the room",
+      "kind": "sleep log",
+      "to": "sleep",
+      "mentions": []
+    },
+    {
+      "d": 46,
+      "h": 9,
+      "m": 0,
+      "body": "no coffee till 10. BTC long +1.7%, one trade, done",
+      "kind": "trade",
+      "to": "trading",
+      "mentions": [
+        "BTC"
+      ]
+    },
+    {
+      "d": 51,
+      "h": 0,
+      "m": 30,
+      "body": "half past midnight, still scrolling, know I should be asleep.",
+      "kind": "late screen",
+      "to": "sleep",
+      "mentions": []
+    },
+    {
+      "d": 51,
+      "h": 7,
+      "m": 40,
+      "body": "4.5h. fried. coffee isn't helping",
+      "kind": "sleep log",
+      "to": "sleep",
+      "mentions": []
+    },
+    {
+      "d": 51,
+      "h": 9,
+      "m": 45,
+      "body": "long NVDA, stopped -2%, re-entered double size. then SOL stopped, flipped long too.",
+      "kind": "trade",
+      "to": "trading",
+      "mentions": [
+        "NVDA",
+        "SOL"
+      ]
+    },
+    {
+      "d": 51,
+      "h": 13,
+      "m": 0,
+      "body": "the degen ticker again, alpha group swears it's the one. full size. -29%.",
+      "kind": "trade",
+      "to": "trading",
+      "mentions": [
+        "alpha group"
+      ]
+    },
+    {
+      "d": 51,
+      "h": 16,
+      "m": 40,
+      "body": "-8.0% day. need to step back for a bit",
+      "kind": "daily close",
+      "to": "trading",
+      "mentions": []
+    },
+    {
+      "d": 52,
+      "h": 9,
+      "m": 5,
+      "body": "7.5h, slept well for once. calm, clear head.",
+      "kind": "sleep log",
+      "to": "sleep",
+      "mentions": []
+    }
+  ]
+}

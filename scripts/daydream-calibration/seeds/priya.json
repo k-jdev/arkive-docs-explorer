@@ -1,0 +1,721 @@
+{
+  "persona": "Priya — secondary-school chemistry teacher",
+  "runIdPrefix": "cal-priya",
+  "practices": [
+    {
+      "name": "teaching",
+      "description": "Lessons, marking, classroom behaviour, reports, department admin.",
+      "triggers": [
+        "lesson",
+        "marking",
+        "Year",
+        "report",
+        "class"
+      ]
+    },
+    {
+      "name": "choir",
+      "description": "Community choir — Tuesday rehearsals, learning parts, the spring concert.",
+      "triggers": [
+        "choir",
+        "rehearsal",
+        "concert",
+        "sing",
+        "alto"
+      ]
+    }
+  ],
+  "obs": [
+    {
+      "d": 0,
+      "h": 8,
+      "m": 40,
+      "body": "Year 9 first thing, double lesson on rates of reaction. They were sharp this morning, good answers off Daniel and the back row. Nice start to the week.",
+      "kind": "lesson",
+      "to": "teaching",
+      "mentions": [
+        "Year 9",
+        "Daniel"
+      ]
+    },
+    {
+      "d": 0,
+      "h": 12,
+      "m": 55,
+      "body": "Staffroom out of the good teabags again so it's the supermarket own-brand. Tragedy.",
+      "kind": "staffroom",
+      "to": "",
+      "mentions": []
+    },
+    {
+      "d": 1,
+      "h": 9,
+      "m": 10,
+      "body": "Year 11 period 2, mock feedback. Calm, they actually wanted to know where they dropped marks. Felt useful.",
+      "kind": "lesson",
+      "to": "teaching",
+      "mentions": [
+        "Year 11"
+      ]
+    },
+    {
+      "d": 1,
+      "h": 15,
+      "m": 5,
+      "body": "P5 with 8C and I snapped at Kayden for flicking a pipette lid. Whole class went silly after. Kept four back. Ended the day with a headache.",
+      "kind": "incident",
+      "to": "teaching",
+      "mentions": [
+        "8C",
+        "Kayden"
+      ]
+    },
+    {
+      "d": 1,
+      "h": 19,
+      "m": 30,
+      "body": "Choir tonight. Learning the Fauré for the spring concert, altos have a horrible jump in the middle section but we got there. Voice felt strong by the end.",
+      "kind": "rehearsal",
+      "to": "choir",
+      "mentions": [
+        "Fauré"
+      ]
+    },
+    {
+      "d": 2,
+      "h": 8,
+      "m": 35,
+      "body": "Year 7 settled in nicely for the bunsen burner safety lesson. They love the licence test. No dramas.",
+      "kind": "lesson",
+      "to": "teaching",
+      "mentions": [
+        "Year 7"
+      ]
+    },
+    {
+      "d": 2,
+      "h": 13,
+      "m": 40,
+      "body": "Quick chat with Gerald in the corridor about the data drop deadline. Fine, just a reminder.",
+      "kind": "admin",
+      "to": "teaching",
+      "mentions": [
+        "Gerald"
+      ]
+    },
+    {
+      "d": 3,
+      "h": 9,
+      "m": 0,
+      "body": "Lovely Year 10 group period 2, did flame tests, the room smelled of lithium for an hour. They were engaged the whole way.",
+      "kind": "lesson",
+      "to": "teaching",
+      "mentions": [
+        "Year 10"
+      ]
+    },
+    {
+      "d": 3,
+      "h": 16,
+      "m": 20,
+      "body": "Bus home was 25 minutes late. Stood in the cold reading the same advert for a driving school four hundred times.",
+      "kind": "commute",
+      "to": "",
+      "mentions": []
+    },
+    {
+      "d": 4,
+      "h": 14,
+      "m": 50,
+      "body": "Last lesson Friday, 9F. Lost the room completely over a paper aeroplane. Raised my voice more than I meant to. Glad it's the weekend.",
+      "kind": "incident",
+      "to": "teaching",
+      "mentions": [
+        "9F"
+      ]
+    },
+    {
+      "d": 6,
+      "h": 11,
+      "m": 15,
+      "body": "Farmers market, got the good eggs and a sourdough. Sat in the square with a coffee. Needed a slow morning.",
+      "kind": "errand",
+      "to": "",
+      "mentions": []
+    },
+    {
+      "d": 7,
+      "h": 8,
+      "m": 45,
+      "body": "Monday, Year 8 first period. Particle model recap, they were brilliant, hands up everywhere. Good omen for the week maybe.",
+      "kind": "lesson",
+      "to": "teaching",
+      "mentions": [
+        "Year 8"
+      ]
+    },
+    {
+      "d": 8,
+      "h": 9,
+      "m": 20,
+      "body": "Year 11 period 2 again, electrolysis. Steady, focused. I like that class.",
+      "kind": "lesson",
+      "to": "teaching",
+      "mentions": [
+        "Year 11"
+      ]
+    },
+    {
+      "d": 8,
+      "h": 15,
+      "m": 15,
+      "body": "P5 7B and they would NOT stop talking over me. Confiscated three phones. Felt like I was shouting into the wind by 3pm.",
+      "kind": "incident",
+      "to": "teaching",
+      "mentions": [
+        "7B"
+      ]
+    },
+    {
+      "d": 8,
+      "h": 19,
+      "m": 25,
+      "body": "Choir. Sectional for the altos tonight, just us in the small hall. Pitched the descant clean first try. Came home buzzing.",
+      "kind": "rehearsal",
+      "to": "choir",
+      "mentions": []
+    },
+    {
+      "d": 9,
+      "h": 8,
+      "m": 50,
+      "body": "Year 9 morning, exothermic reactions practical. They handled the equipment carefully, I barely had to intervene. Patient sort of day.",
+      "kind": "lesson",
+      "to": "teaching",
+      "mentions": [
+        "Year 9"
+      ]
+    },
+    {
+      "d": 9,
+      "h": 13,
+      "m": 10,
+      "body": "Tea in the staffroom, someone brought in flapjack. The good kind with the chewy edges.",
+      "kind": "staffroom",
+      "to": "",
+      "mentions": []
+    },
+    {
+      "d": 10,
+      "h": 9,
+      "m": 5,
+      "body": "Year 10 second period, balancing equations. Worked the room, kept my cool even when half of them hadn't done the homework. Fine actually.",
+      "kind": "lesson",
+      "to": "teaching",
+      "mentions": [
+        "Year 10"
+      ]
+    },
+    {
+      "d": 10,
+      "h": 14,
+      "m": 40,
+      "body": "Fire drill ate the start of P5. By the time we got back in there was 20 minutes left and no point starting the titration. Wrote it off.",
+      "kind": "disruption",
+      "to": "teaching",
+      "mentions": []
+    },
+    {
+      "d": 11,
+      "h": 15,
+      "m": 30,
+      "body": "Last period 8C, the boiler's out so the lab was freezing, everyone in coats and nobody concentrating. Couldn't blame them really. Long afternoon.",
+      "kind": "disruption",
+      "to": "teaching",
+      "mentions": [
+        "8C"
+      ]
+    },
+    {
+      "d": 13,
+      "h": 10,
+      "m": 30,
+      "body": "Sunday. Repotted the basil that's been dying on the windowsill. Low expectations.",
+      "kind": "home",
+      "to": "",
+      "mentions": []
+    },
+    {
+      "d": 14,
+      "h": 7,
+      "m": 45,
+      "body": "Reports for Year 9 due end of next week. Forty of them. Started the spreadsheet, comment bank is a graveyard.",
+      "kind": "reports",
+      "to": "teaching",
+      "mentions": [
+        "Year 9"
+      ]
+    },
+    {
+      "d": 14,
+      "h": 8,
+      "m": 55,
+      "body": "Year 7 first thing, separating mixtures. Filtration paper everywhere but they were happy and so was I. Good lesson.",
+      "kind": "lesson",
+      "to": "teaching",
+      "mentions": [
+        "Year 7"
+      ]
+    },
+    {
+      "d": 15,
+      "h": 12,
+      "m": 50,
+      "body": "Sandwich at my desk again, skipped the staffroom. Not enough hours in the day.",
+      "kind": "reports",
+      "to": "teaching",
+      "mentions": []
+    },
+    {
+      "d": 15,
+      "h": 15,
+      "m": 5,
+      "body": "P5 9F, snapped at them over a thrown eraser and kept the whole row behind. Bit much in hindsight. Came home with a headache.",
+      "kind": "incident",
+      "to": "teaching",
+      "mentions": [
+        "9F"
+      ]
+    },
+    {
+      "d": 15,
+      "h": 19,
+      "m": 30,
+      "body": "Skipped choir tonight, too much on. Sent my apologies to the section lead. Sat at the kitchen table till ten.",
+      "kind": "skip",
+      "to": "choir",
+      "mentions": []
+    },
+    {
+      "d": 16,
+      "h": 15,
+      "m": 10,
+      "body": "P5 with 7B, my patience was paper-thin, told the whole class off for something two of them did. Felt unfair after but couldn't climb back down. Throat scratchy by home time.",
+      "kind": "incident",
+      "to": "teaching",
+      "mentions": [
+        "7B"
+      ]
+    },
+    {
+      "d": 17,
+      "h": 13,
+      "m": 0,
+      "body": "Lunch at the desk again, no staffroom. The standard sentence about 'making valuable contributions to class discussion' is starting to taste like ash.",
+      "kind": "reports",
+      "to": "teaching",
+      "mentions": []
+    },
+    {
+      "d": 17,
+      "h": 14,
+      "m": 55,
+      "body": "Last lesson 8C, voice going hoarse and I had no fight in me, just let them coast on a worksheet. Not my proudest. Came home and didn't speak to anyone.",
+      "kind": "incident",
+      "to": "teaching",
+      "mentions": [
+        "8C"
+      ]
+    },
+    {
+      "d": 18,
+      "h": 16,
+      "m": 40,
+      "body": "Reports submitted, finally. Gerald replied 'thanks, we'll review' in his usual two words. Glass of wine and a bath.",
+      "kind": "reports",
+      "to": "teaching",
+      "mentions": [
+        "Gerald"
+      ]
+    },
+    {
+      "d": 20,
+      "h": 11,
+      "m": 0,
+      "body": "Slept in, did nothing, watched three episodes of something forgettable. Voice still a bit rough. Good.",
+      "kind": "home",
+      "to": "",
+      "mentions": []
+    },
+    {
+      "d": 21,
+      "h": 8,
+      "m": 40,
+      "body": "Back to it. Year 11 mocks results came in, period 2, we went through grade boundaries. They were mature about it. Nice morning.",
+      "kind": "lesson",
+      "to": "teaching",
+      "mentions": [
+        "Year 11"
+      ]
+    },
+    {
+      "d": 21,
+      "h": 19,
+      "m": 30,
+      "body": "Choir back on. Concert's six weeks out now, conductor's getting twitchy. We ran the Fauré start to finish, altos held the line. Voice felt good and open.",
+      "kind": "rehearsal",
+      "to": "choir",
+      "mentions": [
+        "Fauré"
+      ]
+    },
+    {
+      "d": 22,
+      "h": 9,
+      "m": 15,
+      "body": "Year 8 morning, did a fun practical, elephant's toothpaste. The gasps. Marked their write-ups at lunch and actually enjoyed it. Stayed level all day.",
+      "kind": "lesson",
+      "to": "teaching",
+      "mentions": [
+        "Year 8"
+      ]
+    },
+    {
+      "d": 23,
+      "h": 8,
+      "m": 50,
+      "body": "Year 10 first period, moles calculations. Tough topic but I was patient, broke it down three different ways and most of them got there.",
+      "kind": "lesson",
+      "to": "teaching",
+      "mentions": [
+        "Year 10"
+      ]
+    },
+    {
+      "d": 23,
+      "h": 14,
+      "m": 45,
+      "body": "Rumour going round the staffroom that Ofsted are due 'any week now'. Everyone a bit jumpy. Probably nothing.",
+      "kind": "rumour",
+      "to": "",
+      "mentions": [
+        "Ofsted"
+      ]
+    },
+    {
+      "d": 24,
+      "h": 15,
+      "m": 20,
+      "body": "P5 9F and they tested me but I held it, made a joke instead of biting. They actually laughed and settled.",
+      "kind": "lesson",
+      "to": "teaching",
+      "mentions": [
+        "9F"
+      ]
+    },
+    {
+      "d": 25,
+      "h": 13,
+      "m": 30,
+      "body": "Colleague in the science office, Marian, it's her birthday, we did cake in the prep room. Felt nice and human.",
+      "kind": "social",
+      "to": "",
+      "mentions": [
+        "Marian"
+      ]
+    },
+    {
+      "d": 27,
+      "h": 10,
+      "m": 0,
+      "body": "Saturday. Long walk by the canal, no headphones, just the ducks. The Ofsted thing seems to have gone quiet, nobody's mentioned it in days.",
+      "kind": "home",
+      "to": "",
+      "mentions": [
+        "Ofsted"
+      ]
+    },
+    {
+      "d": 28,
+      "h": 8,
+      "m": 35,
+      "body": "Year 9 first period, acids and alkalis, universal indicator rainbow. They were genuinely delighted. Calm, good morning.",
+      "kind": "lesson",
+      "to": "teaching",
+      "mentions": [
+        "Year 9"
+      ]
+    },
+    {
+      "d": 28,
+      "h": 19,
+      "m": 30,
+      "body": "Choir, sat next to the new alto, she reads music well. We nailed the tricky entry in the Stanford. Sang for two hours and could've kept going.",
+      "kind": "rehearsal",
+      "to": "choir",
+      "mentions": [
+        "Stanford"
+      ]
+    },
+    {
+      "d": 29,
+      "h": 9,
+      "m": 10,
+      "body": "Year 7 period 2, states of matter, did the modelling with marbles in a tray. They were lovely. I had all the patience in the world today.",
+      "kind": "lesson",
+      "to": "teaching",
+      "mentions": [
+        "Year 7"
+      ]
+    },
+    {
+      "d": 30,
+      "h": 15,
+      "m": 15,
+      "body": "Last lesson 7B, normally my nemesis, but I kept it light and they came with me. Surprised myself. Voice held up fine too.",
+      "kind": "lesson",
+      "to": "teaching",
+      "mentions": [
+        "7B"
+      ]
+    },
+    {
+      "d": 31,
+      "h": 7,
+      "m": 50,
+      "body": "Woke up streaming, properly full head cold, sinuses like concrete. Dosed up on paracetamol and dragged myself in.",
+      "kind": "illness",
+      "to": "",
+      "mentions": []
+    },
+    {
+      "d": 31,
+      "h": 14,
+      "m": 40,
+      "body": "Croaking through P5 with the cold, lost my voice by the last twenty minutes, had to write instructions on the board. Year 8 were quite sweet about it actually.",
+      "kind": "illness",
+      "to": "teaching",
+      "mentions": [
+        "Year 8"
+      ]
+    },
+    {
+      "d": 32,
+      "h": 11,
+      "m": 20,
+      "body": "Voice completely gone today, full laryngitis from this virus. Got cover for P5. Home on the sofa with lemon and honey. Miserable.",
+      "kind": "illness",
+      "to": "",
+      "mentions": []
+    },
+    {
+      "d": 33,
+      "h": 12,
+      "m": 40,
+      "body": "Still snotty but the voice is creeping back. Cancelled choir, obviously, can't sing through a head cold. Resting it.",
+      "kind": "illness",
+      "to": "choir",
+      "mentions": []
+    },
+    {
+      "d": 35,
+      "h": 10,
+      "m": 30,
+      "body": "Cold finally lifting. Did the big shop, bought far too many oranges out of some vitamin-C guilt.",
+      "kind": "errand",
+      "to": "",
+      "mentions": []
+    },
+    {
+      "d": 36,
+      "h": 8,
+      "m": 45,
+      "body": "Year 11 first period, revision on organic chemistry, they're getting nervous about the real exams. Steady morning, kept them grounded.",
+      "kind": "lesson",
+      "to": "teaching",
+      "mentions": [
+        "Year 11"
+      ]
+    },
+    {
+      "d": 36,
+      "h": 13,
+      "m": 15,
+      "body": "Year 10 reports due Friday. Comment bank reopened, soul leaving body.",
+      "kind": "reports",
+      "to": "teaching",
+      "mentions": [
+        "Year 10"
+      ]
+    },
+    {
+      "d": 37,
+      "h": 12,
+      "m": 55,
+      "body": "Worked through lunch at my desk, no staffroom today.",
+      "kind": "reports",
+      "to": "teaching",
+      "mentions": [
+        "Year 10"
+      ]
+    },
+    {
+      "d": 37,
+      "h": 15,
+      "m": 25,
+      "body": "P5 8C and I lost it over a thrown rubber, sent two out. Sat in the empty lab after feeling like the worst version of myself. Throat tight by the end.",
+      "kind": "incident",
+      "to": "teaching",
+      "mentions": [
+        "8C"
+      ]
+    },
+    {
+      "d": 38,
+      "h": 19,
+      "m": 30,
+      "body": "Skipped choir again, couldn't face it. Hate missing it twice in a term. Sat up late at the kitchen table.",
+      "kind": "skip",
+      "to": "choir",
+      "mentions": []
+    },
+    {
+      "d": 39,
+      "h": 14,
+      "m": 50,
+      "body": "Last lesson 9F, frayed, snapped at the wrong kid entirely, had to apologise. Voice scratchy and thin again. Long week.",
+      "kind": "incident",
+      "to": "teaching",
+      "mentions": [
+        "9F"
+      ]
+    },
+    {
+      "d": 40,
+      "h": 16,
+      "m": 30,
+      "body": "Reports in. Gerald stopped by the lab beforehand to 'check progress', stood over my shoulder a minute. Submitted at 4. Knackered.",
+      "kind": "reports",
+      "to": "teaching",
+      "mentions": [
+        "Gerald"
+      ]
+    },
+    {
+      "d": 42,
+      "h": 11,
+      "m": 0,
+      "body": "Sunday market, ran into a parent which is always slightly weird, but they were nice about it. Bought tulips.",
+      "kind": "errand",
+      "to": "",
+      "mentions": []
+    },
+    {
+      "d": 43,
+      "h": 8,
+      "m": 40,
+      "body": "Year 9 first period, rates revision, they were on it, racing each other through the questions. Lovely energy. Good Monday.",
+      "kind": "lesson",
+      "to": "teaching",
+      "mentions": [
+        "Year 9"
+      ]
+    },
+    {
+      "d": 43,
+      "h": 19,
+      "m": 30,
+      "body": "Made it to choir. Concert's a fortnight off now. We did a full run and the altos sounded rich, my voice opened right up by the second half. Felt like myself again.",
+      "kind": "rehearsal",
+      "to": "choir",
+      "mentions": []
+    },
+    {
+      "d": 44,
+      "h": 9,
+      "m": 5,
+      "body": "Year 8 period 2, combustion practical, they were careful and curious. I had a long fuse all lesson. Good morning.",
+      "kind": "lesson",
+      "to": "teaching",
+      "mentions": [
+        "Year 8"
+      ]
+    },
+    {
+      "d": 45,
+      "h": 15,
+      "m": 20,
+      "body": "P5 7B and somehow I kept the lid on, redirected the loud ones without raising my voice. They responded. Decent afternoon.",
+      "kind": "lesson",
+      "to": "teaching",
+      "mentions": [
+        "7B"
+      ]
+    },
+    {
+      "d": 46,
+      "h": 13,
+      "m": 40,
+      "body": "Wet break duty, herding damp Year 7s out of the corridors. Smelled of wet coat and orange squash. Standard.",
+      "kind": "duty",
+      "to": "teaching",
+      "mentions": [
+        "Year 7"
+      ]
+    },
+    {
+      "d": 47,
+      "h": 14,
+      "m": 55,
+      "body": "Last lesson 8C and I stayed patient even when the bunsen got 'accidentally' left roaring. Calm word, not a blow-up. Better day all round.",
+      "kind": "lesson",
+      "to": "teaching",
+      "mentions": [
+        "8C"
+      ]
+    },
+    {
+      "d": 49,
+      "h": 18,
+      "m": 0,
+      "body": "Bought a new black dress for the concert. The old one's gone bobbly. Feeling oddly ready for it.",
+      "kind": "concert-prep",
+      "to": "choir",
+      "mentions": []
+    },
+    {
+      "d": 50,
+      "h": 8,
+      "m": 45,
+      "body": "Year 10 first period, going gently into electrolysis again, they remembered more than they thought. Patient, easy morning.",
+      "kind": "lesson",
+      "to": "teaching",
+      "mentions": [
+        "Year 10"
+      ]
+    },
+    {
+      "d": 50,
+      "h": 19,
+      "m": 30,
+      "body": "Final rehearsal before the concert. Conductor near tears. The Fauré landed, altos and all. Voice clear right to the top of the range. Ready.",
+      "kind": "rehearsal",
+      "to": "choir",
+      "mentions": [
+        "Fauré"
+      ]
+    },
+    {
+      "d": 52,
+      "h": 21,
+      "m": 30,
+      "body": "Concert done. We sang the Stanford and the Fauré and people actually cried. My voice held the whole way through. Floated home.",
+      "kind": "concert",
+      "to": "choir",
+      "mentions": [
+        "Stanford",
+        "Fauré"
+      ]
+    }
+  ]
+}

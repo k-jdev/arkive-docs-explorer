@@ -1,0 +1,40 @@
+# Dependencies
+node_modules
+package-lock.json.bak
+
+# Build output
+.next
+out
+tsconfig.tsbuildinfo
+
+# Secrets / local data — NEVER commit
+.env
+.env.local
+.env.*.local
+.arkive
+*.key
+*.pem
+
+# Logs + OS junk
+*.log
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode
+.idea
+*.swp
+*~
+
+# Claude Code local state (personal — per developer)
+.claude
+memory
+
+# Data exports — contain encrypted wallets + personal arkive data, never commit
+arkive-export.json
+arkive-export-*.json
+.preservation/
+.smoke-stream/
+arkive-import.json
+.smoke-emergence/
+.vercel

@@ -1,0 +1,156 @@
+{
+  "schema_version": 1,
+  "intro": "Quick onboarding so Arkive knows how to behave. Eight questions. You can change any answer later by saying 'reconfigure ARK'.",
+  "questions": [
+    {
+      "id": "strictness",
+      "dimension": "strictness",
+      "title": "How strictly should rules in your rules/ arkive be enforced?",
+      "description": "When a rule's action is `warn` or `require_override`, do I lean toward letting things through or holding the line?",
+      "options": [
+        {
+          "value": "lenient",
+          "label": "Lenient",
+          "description": "Downgrade rule actions: `warn` becomes silent, `require_override` becomes `warn`, `block` stays `block`."
+        },
+        {
+          "value": "normal",
+          "label": "Normal",
+          "description": "Apply rule actions exactly as defined in each rule entry."
+        },
+        {
+          "value": "strict",
+          "label": "Strict",
+          "description": "Upgrade rule actions: `warn` becomes `require_override`, `require_override` becomes `block` (only for safety/sizing categories)."
+        }
+      ],
+      "default": "normal"
+    },
+    {
+      "id": "verbosity",
+      "dimension": "verbosity",
+      "title": "How much should I say in responses?",
+      "description": "Affects all non-confirmation output. Required confirmations and rule warnings are never suppressed.",
+      "options": [
+        {
+          "value": "terse",
+          "label": "Terse",
+          "description": "Minimum viable response. Bullet points, no preamble."
+        },
+        {
+          "value": "normal",
+          "label": "Normal",
+          "description": "Full explanations when useful, brief when obvious."
+        },
+        {
+          "value": "thorough",
+          "label": "Thorough",
+          "description": "Detailed reasoning, alternatives considered, edge cases noted."
+        }
+      ],
+      "default": "normal"
+    },
+    {
+      "id": "register",
+      "dimension": "register",
+      "title": "What's your familiarity with on-chain trading?",
+      "description": "Affects how much I unpack jargon (slippage, gas, FoT, MEV, bridge, etc).",
+      "options": [
+        {
+          "value": "explain-terms",
+          "label": "New to this",
+          "description": "Define jargon the first time it appears in a session. Spell things out."
+        },
+        {
+          "value": "peer",
+          "label": "Comfortable",
+          "description": "Use trader vocabulary freely. Define only the obscure stuff."
+        },
+        {
+          "value": "expert",
+          "label": "Power user",
+          "description": "Full jargon, no hand-holding. Skip 101 explanations entirely."
+        }
+      ],
+      "default": "peer"
+    },
+    {
+      "id": "pushback",
+      "dimension": "pushback",
+      "title": "How willing should I be to push back on your requests?",
+      "description": "Affects whether I voice concerns about the trade you asked for, or just queue it.",
+      "options": [
+        {
+          "value": "compliant",
+          "label": "Compliant",
+          "description": "Execute what's asked. Surface only blocks and required confirmations."
+        },
+        {
+          "value": "balanced",
+          "label": "Balanced",
+          "description": "Speak up about non-trivial risks (low liquidity, high impact, fresh token) before executing."
+        },
+        {
+          "value": "challenging",
+          "label": "Challenging",
+          "description": "Question rationale on borderline calls. Suggest alternatives. Reference patterns/ when relevant."
+        }
+      ],
+      "default": "balanced"
+    },
+    {
+      "id": "confirmation",
+      "dimension": "confirmation",
+      "title": "When should I ask before acting?",
+      "description": "Independent of rules — this is about my conversational habit, not enforcement.",
+      "options": [
+        {
+          "value": "always",
+          "label": "Always",
+          "description": "Confirm before every action that touches state — including reads of preferences, writes to rules, swaps."
+        },
+        {
+          "value": "writes-and-financial",
+          "label": "Writes + financial",
+          "description": "Confirm before any write to arkives or any swap. Reads are silent."
+        },
+        {
+          "value": "financial-only",
+          "label": "Financial only",
+          "description": "Confirm only before queueing a swap. Arkive writes are silent."
+        },
+        {
+          "value": "never",
+          "label": "Never",
+          "description": "Just do it. Block-level rules still gate; confirmation prompts disappear."
+        }
+      ],
+      "default": "writes-and-financial"
+    },
+    {
+      "id": "default_chain",
+      "dimension": "defaults.default_chain",
+      "title": "What chain do you want as default?",
+      "description": "Used when you say 'buy PEPE' without specifying a chain. You can override per request anytime.",
+      "options": [
+        { "value": "ethereum", "label": "Ethereum", "description": "L1, deepest liquidity, higher gas." },
+        { "value": "base", "label": "Base", "description": "L2, cheap gas (~$0.005/swap), Coinbase-backed." },
+        { "value": "ask", "label": "Ask each time", "description": "I'll prompt for chain if you don't specify." }
+      ],
+      "default": "ethereum"
+    },
+    {
+      "id": "dust_threshold_usd",
+      "dimension": "defaults.dust_threshold_usd",
+      "title": "What's a 'dust' position to you?",
+      "description": "Holdings worth less than this are filtered out of portfolio summaries and PnL views by default. Includes scam airdrops and rounding scraps. Still queryable via includeDust=true.",
+      "options": [
+        { "value": 0.1, "label": "< $0.10", "description": "Strict — only ignore truly trivial scraps." },
+        { "value": 1.0, "label": "< $1.00", "description": "Recommended. Filters scam airdrops and pennies." },
+        { "value": 10.0, "label": "< $10.00", "description": "Aggressive. Hides anything not worth selling for gas." },
+        { "value": 0, "label": "Show all", "description": "No filter. Dust + scam tokens included in everything." }
+      ],
+      "default": 1.0
+    }
+  ]
+}

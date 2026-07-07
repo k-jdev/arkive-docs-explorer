@@ -1,0 +1,754 @@
+{
+  "persona": "Tomas — custom-furniture maker",
+  "runIdPrefix": "cal-tomas",
+  "practices": [
+    {
+      "name": "workshop",
+      "description": "Commissions, builds, materials, joinery, finishing, deliveries.",
+      "triggers": [
+        "build",
+        "commission",
+        "glue-up",
+        "timber",
+        "deliver"
+      ]
+    },
+    {
+      "name": "money",
+      "description": "Cashflow, invoicing, chasing balances, tool/timber spend, rent.",
+      "triggers": [
+        "invoice",
+        "deposit",
+        "rent",
+        "paid",
+        "quote"
+      ]
+    }
+  ],
+  "obs": [
+    {
+      "d": 0,
+      "h": 8,
+      "m": 12,
+      "body": "Walnut sideboard for the Hewitts confirmed. Quoted them six weeks start to finish, should be tidy. Deposit cleared this morning.",
+      "kind": "commission",
+      "to": "workshop",
+      "mentions": [
+        "Hewitts",
+        "sideboard"
+      ]
+    },
+    {
+      "d": 0,
+      "h": 9,
+      "m": 40,
+      "body": "Hewitt deposit landed, 900 in. Drove out to the yard for the carcass oak, came back with two extra boards of figured walnut as well. Pretty stuff.",
+      "kind": "deposit",
+      "to": "money",
+      "mentions": [
+        "Hewitts"
+      ]
+    },
+    {
+      "d": 1,
+      "h": 7,
+      "m": 55,
+      "body": "Dog got me up at half five again. Walked her round the rec before the workshop. Frost still on the cars.",
+      "kind": "filler",
+      "to": "",
+      "mentions": [
+        "dog"
+      ]
+    },
+    {
+      "d": 1,
+      "h": 14,
+      "m": 20,
+      "body": "Cut the sideboard panels to rough length. Good grain match on the front. Radio doing the wartime requests hour, half listened.",
+      "kind": "build",
+      "to": "workshop",
+      "mentions": [
+        "sideboard"
+      ]
+    },
+    {
+      "d": 2,
+      "h": 11,
+      "m": 5,
+      "body": "Mara asked if I'd do her a bookshelf for the alcove. Said yes, mates' rates obviously, she's known me twenty years. Sketched it on the back of an invoice.",
+      "kind": "commission",
+      "to": "workshop",
+      "mentions": [
+        "Mara",
+        "bookshelf"
+      ]
+    },
+    {
+      "d": 3,
+      "h": 16,
+      "m": 48,
+      "body": "Invoiced the Pearsons for the bench balance, 540. That job closed out three weeks ago, about time.",
+      "kind": "invoice",
+      "to": "money",
+      "mentions": [
+        "Pearsons"
+      ]
+    },
+    {
+      "d": 4,
+      "h": 13,
+      "m": 30,
+      "body": "Dust extractor packed in halfway through planing. Just stopped. Whacked it, nothing. Bag's not full. Annoying.",
+      "kind": "noise",
+      "to": "workshop",
+      "mentions": [
+        "dust extractor"
+      ]
+    },
+    {
+      "d": 5,
+      "h": 10,
+      "m": 15,
+      "body": "Extractor working again this morning, no idea what I did. Reseated the hose maybe. Back planing the walnut.",
+      "kind": "noise",
+      "to": "workshop",
+      "mentions": [
+        "dust extractor"
+      ]
+    },
+    {
+      "d": 6,
+      "h": 9,
+      "m": 0,
+      "body": "Lunch at Greco's again, the usual. Read the paper. Quiet Saturday.",
+      "kind": "filler",
+      "to": "",
+      "mentions": [
+        "Greco's"
+      ]
+    },
+    {
+      "d": 7,
+      "h": 18,
+      "m": 22,
+      "body": "Hewitt sideboard. Said six weeks, end of week one and the drawer stock has cupped on me, has to be re-dimensioned. Behind already but it'll catch up.",
+      "kind": "build",
+      "to": "workshop",
+      "mentions": [
+        "Hewitts",
+        "sideboard"
+      ]
+    },
+    {
+      "d": 8,
+      "h": 8,
+      "m": 45,
+      "body": "Rent due Friday, 650. Statement says I'm fine for it but only just. The Pearson balance hasn't landed yet.",
+      "kind": "rent",
+      "to": "money",
+      "mentions": [
+        "Pearsons",
+        "rent"
+      ]
+    },
+    {
+      "d": 9,
+      "h": 15,
+      "m": 10,
+      "body": "Started Mara's bookshelf carcass on the side between sideboard glue-ups. Forgot how much oak even a small unit eats. Three boards gone and that's just the sides.",
+      "kind": "build",
+      "to": "workshop",
+      "mentions": [
+        "Mara",
+        "bookshelf"
+      ]
+    },
+    {
+      "d": 10,
+      "h": 12,
+      "m": 0,
+      "body": "Pearson balance finally in, 540. Rent covered. Breathe.",
+      "kind": "paid",
+      "to": "money",
+      "mentions": [
+        "Pearsons",
+        "rent"
+      ]
+    },
+    {
+      "d": 11,
+      "h": 8,
+      "m": 5,
+      "body": "Bank balance grim until that Pearson money cleared. Two outstanding invoices I need to chase. Rent took the cushion.",
+      "kind": "cashflow",
+      "to": "money",
+      "mentions": [
+        "Pearsons",
+        "rent"
+      ]
+    },
+    {
+      "d": 11,
+      "h": 17,
+      "m": 30,
+      "body": "Sideboard glue-up today. Squeeze-out everywhere and a panel slipped on me, dried proud. Have to plane it flat and hope.",
+      "kind": "mistake",
+      "to": "workshop",
+      "mentions": [
+        "sideboard"
+      ]
+    },
+    {
+      "d": 12,
+      "h": 9,
+      "m": 30,
+      "body": "Van booked in for MOT next Tuesday. Probably needs a tyre too, the front nearside's worn.",
+      "kind": "filler",
+      "to": "",
+      "mentions": [
+        "van"
+      ]
+    },
+    {
+      "d": 13,
+      "h": 14,
+      "m": 50,
+      "body": "Planed that proud panel back. Lost a hair of thickness and there's a faint glue line now if you catch the light. Hewitts won't notice. I notice.",
+      "kind": "build",
+      "to": "workshop",
+      "mentions": [
+        "Hewitts",
+        "sideboard"
+      ]
+    },
+    {
+      "d": 14,
+      "h": 11,
+      "m": 20,
+      "body": "Dave rang, his mate wants a coffee table, walnut, live edge. Told Dave I'd do him a good price. Roughed a number on the back of an envelope.",
+      "kind": "commission",
+      "to": "workshop",
+      "mentions": [
+        "Dave",
+        "coffee table"
+      ]
+    },
+    {
+      "d": 15,
+      "h": 16,
+      "m": 0,
+      "body": "Mara's bookshelf was meant to be a weekend filler. It's eaten three evenings and I'm shaping the face frame still. Should've kept it simpler.",
+      "kind": "build",
+      "to": "workshop",
+      "mentions": [
+        "Mara",
+        "bookshelf"
+      ]
+    },
+    {
+      "d": 16,
+      "h": 9,
+      "m": 15,
+      "body": "Craft fair at the old market hall in four weeks. Booked a table, 45 quid. Might shift some of the small stuff, boards and the little stools.",
+      "kind": "event",
+      "to": "workshop",
+      "mentions": [
+        "craft fair"
+      ]
+    },
+    {
+      "d": 17,
+      "h": 13,
+      "m": 40,
+      "body": "Humidity's been mad this week, everything's moving. Blaming the damp for the sideboard door not sitting flush. Workshop felt like a greenhouse.",
+      "kind": "noise",
+      "to": "workshop",
+      "mentions": [
+        "sideboard"
+      ]
+    },
+    {
+      "d": 18,
+      "h": 10,
+      "m": 0,
+      "body": "Quoted a wardrobe job for a couple in the new builds. Sent it over at 2,200. Haven't heard back, they winced a bit in person.",
+      "kind": "quote",
+      "to": "money",
+      "mentions": [
+        "wardrobe couple",
+        "wardrobe"
+      ]
+    },
+    {
+      "d": 19,
+      "h": 8,
+      "m": 30,
+      "body": "Sideboard. Today was meant to be the day it shipped. It is not shipping today. Hinges arrived wrong size, reordered.",
+      "kind": "build",
+      "to": "workshop",
+      "mentions": [
+        "sideboard"
+      ]
+    },
+    {
+      "d": 20,
+      "h": 12,
+      "m": 15,
+      "body": "Greco's with the dog tied outside. Soup of the day was leek. Fine.",
+      "kind": "filler",
+      "to": "",
+      "mentions": [
+        "Greco's",
+        "dog"
+      ]
+    },
+    {
+      "d": 21,
+      "h": 15,
+      "m": 30,
+      "body": "Mara's bookshelf done and delivered, she loves it. Used more oak than I'd reckoned on for the alcove sizing.",
+      "kind": "deliver",
+      "to": "workshop",
+      "mentions": [
+        "Mara",
+        "bookshelf"
+      ]
+    },
+    {
+      "d": 22,
+      "h": 9,
+      "m": 50,
+      "body": "Two invoices still unpaid, the Lowes one is now five weeks. Sent a polite nudge. Hate doing it.",
+      "kind": "chasing",
+      "to": "money",
+      "mentions": [
+        "Lowes"
+      ]
+    },
+    {
+      "d": 23,
+      "h": 14,
+      "m": 10,
+      "body": "Right hinges came. Hung the sideboard doors finally. Looks the part. Said six weeks, we're at three and a bit weeks just for this and it's not finished, still needs finishing oil.",
+      "kind": "build",
+      "to": "workshop",
+      "mentions": [
+        "sideboard"
+      ]
+    },
+    {
+      "d": 24,
+      "h": 11,
+      "m": 0,
+      "body": "Started the live-edge coffee table for Dave's mate. The slab had a shake running deeper than I thought. More filling than building.",
+      "kind": "build",
+      "to": "workshop",
+      "mentions": [
+        "Dave",
+        "coffee table"
+      ]
+    },
+    {
+      "d": 25,
+      "h": 16,
+      "m": 45,
+      "body": "Wardrobe couple came back, want to go ahead but knocked me to 2,000. Deposit of 600 to follow. I'll take it, work's work.",
+      "kind": "quote",
+      "to": "money",
+      "mentions": [
+        "wardrobe couple",
+        "wardrobe"
+      ]
+    },
+    {
+      "d": 26,
+      "h": 10,
+      "m": 30,
+      "body": "Wardrobe deposit in, 600. Straight to the yard for the sheet ply and carcass timber, and grabbed a lovely burr elm slab while I was there.",
+      "kind": "deposit",
+      "to": "money",
+      "mentions": [
+        "wardrobe couple",
+        "wardrobe"
+      ]
+    },
+    {
+      "d": 27,
+      "h": 8,
+      "m": 20,
+      "body": "Sanded and oiled the Hewitt sideboard. First coat looks rich. Delivery booked for Thursday. Six week job, we're at week four, close enough to call it a win in my head.",
+      "kind": "build",
+      "to": "workshop",
+      "mentions": [
+        "Hewitts",
+        "sideboard"
+      ]
+    },
+    {
+      "d": 28,
+      "h": 13,
+      "m": 0,
+      "body": "Old schoolfriend Col helping me in the shop the next couple of days, owed him a favour years back and he likes pottering. Extra pair of hands on the wardrobe carcass.",
+      "kind": "noise",
+      "to": "workshop",
+      "mentions": [
+        "Col",
+        "wardrobe"
+      ]
+    },
+    {
+      "d": 29,
+      "h": 9,
+      "m": 15,
+      "body": "Delivered the Hewitt sideboard. They're thrilled. Balance invoiced, 900. One off the list.",
+      "kind": "deliver",
+      "to": "workshop",
+      "mentions": [
+        "Hewitts",
+        "sideboard"
+      ]
+    },
+    {
+      "d": 29,
+      "h": 17,
+      "m": 10,
+      "body": "Hewitt balance paid on the spot, 900. Good clients. Account looks healthy for once.",
+      "kind": "paid",
+      "to": "money",
+      "mentions": [
+        "Hewitts"
+      ]
+    },
+    {
+      "d": 30,
+      "h": 11,
+      "m": 40,
+      "body": "Col and I got the wardrobe carcass dry-fitted. Went quick with two of us. He left at three, back to his own life.",
+      "kind": "build",
+      "to": "workshop",
+      "mentions": [
+        "Col",
+        "wardrobe"
+      ]
+    },
+    {
+      "d": 31,
+      "h": 10,
+      "m": 0,
+      "body": "Dave's coffee table. The favour table has now eaten most of a week and I've not touched the wardrobe doors. The shake in the slab keeps revealing more of itself.",
+      "kind": "build",
+      "to": "workshop",
+      "mentions": [
+        "Dave",
+        "coffee table",
+        "wardrobe"
+      ]
+    },
+    {
+      "d": 32,
+      "h": 15,
+      "m": 20,
+      "body": "Van passed the MOT, just needed the one tyre. 90 quid all in. Better than feared.",
+      "kind": "filler",
+      "to": "",
+      "mentions": [
+        "van"
+      ]
+    },
+    {
+      "d": 33,
+      "h": 8,
+      "m": 50,
+      "body": "Lowe invoice finally paid after the second nudge. Five and a half weeks. Logged it.",
+      "kind": "paid",
+      "to": "money",
+      "mentions": [
+        "Lowes"
+      ]
+    },
+    {
+      "d": 34,
+      "h": 14,
+      "m": 0,
+      "body": "A delivery of pre-cut drawer sides arrived warped, properly bowed. Sending the lot back, won't use them. Supplier apologised, replacement coming.",
+      "kind": "noise",
+      "to": "workshop",
+      "mentions": [
+        "wardrobe"
+      ]
+    },
+    {
+      "d": 35,
+      "h": 9,
+      "m": 30,
+      "body": "Wardrobe doors marked out. Couple wants soft-close runners, ordered those, 60 quid out the deposit.",
+      "kind": "build",
+      "to": "workshop",
+      "mentions": [
+        "wardrobe couple",
+        "wardrobe"
+      ]
+    },
+    {
+      "d": 36,
+      "h": 16,
+      "m": 30,
+      "body": "Looked at Dave's coffee table over a cuppa. The shake in the slab keeps eating hours, deeper every cut.",
+      "kind": "build",
+      "to": "workshop",
+      "mentions": [
+        "Dave",
+        "coffee table"
+      ]
+    },
+    {
+      "d": 37,
+      "h": 12,
+      "m": 10,
+      "body": "Greco's. The owner's getting a new awning. Riveting stuff. Ham and cheese.",
+      "kind": "filler",
+      "to": "",
+      "mentions": [
+        "Greco's"
+      ]
+    },
+    {
+      "d": 38,
+      "h": 8,
+      "m": 15,
+      "body": "Money's gone tight again. Wardrobe deposit's mostly spent on stock and runners, nothing new invoiced this week, rent looms again next Friday.",
+      "kind": "cashflow",
+      "to": "money",
+      "mentions": [
+        "wardrobe couple",
+        "rent"
+      ]
+    },
+    {
+      "d": 39,
+      "h": 7,
+      "m": 50,
+      "body": "Stared at the bank app over coffee. Tight. Need to invoice something soon. Chasing the wardrobe couple's mind off the price.",
+      "kind": "cashflow",
+      "to": "money",
+      "mentions": [
+        "wardrobe couple"
+      ]
+    },
+    {
+      "d": 39,
+      "h": 13,
+      "m": 45,
+      "body": "Rushing the coffee table glue-up to free the bench and I cross-threaded a clamp and the top racked. Pulled it apart wet, re-did it, lost the morning. Should've waited.",
+      "kind": "mistake",
+      "to": "workshop",
+      "mentions": [
+        "coffee table"
+      ]
+    },
+    {
+      "d": 40,
+      "h": 10,
+      "m": 20,
+      "body": "Replacement drawer sides came, straight this time. Back on the wardrobe drawers.",
+      "kind": "build",
+      "to": "workshop",
+      "mentions": [
+        "wardrobe"
+      ]
+    },
+    {
+      "d": 41,
+      "h": 15,
+      "m": 0,
+      "body": "Dog rolled in fox muck on the green. Bath in the yard with the cold hose. She was thrilled, I was not.",
+      "kind": "filler",
+      "to": "",
+      "mentions": [
+        "dog"
+      ]
+    },
+    {
+      "d": 42,
+      "h": 9,
+      "m": 0,
+      "body": "Coffee table finally out to Dave's mate. He paid the cheap number happily. That shake cost me days of filling.",
+      "kind": "deliver",
+      "to": "workshop",
+      "mentions": [
+        "Dave",
+        "coffee table"
+      ]
+    },
+    {
+      "d": 43,
+      "h": 11,
+      "m": 30,
+      "body": "Wardrobe was due done this Friday per my own plan. It will not be. Doors need a second go at the bevel and I've the fair to prep for.",
+      "kind": "build",
+      "to": "workshop",
+      "mentions": [
+        "wardrobe",
+        "craft fair"
+      ]
+    },
+    {
+      "d": 44,
+      "h": 8,
+      "m": 40,
+      "body": "Rent paid, 650. Cleared but it took the wardrobe couple's deposit remainder to do it. Living invoice to invoice this stretch.",
+      "kind": "rent",
+      "to": "money",
+      "mentions": [
+        "wardrobe couple",
+        "rent"
+      ]
+    },
+    {
+      "d": 45,
+      "h": 14,
+      "m": 15,
+      "body": "Made a batch of small oak boards and three stools for the craft fair. Quick work, satisfying for once, no client breathing on it.",
+      "kind": "build",
+      "to": "workshop",
+      "mentions": [
+        "craft fair"
+      ]
+    },
+    {
+      "d": 46,
+      "h": 16,
+      "m": 50,
+      "body": "Blamed the weather again for a board cupping in the rack, then remembered I'd leant it against the radiator myself. Not the weather this time. My fault.",
+      "kind": "noise",
+      "to": "workshop",
+      "mentions": []
+    },
+    {
+      "d": 47,
+      "h": 9,
+      "m": 10,
+      "body": "Money's still pinched. Nothing's cleared since the Hewitt balance and that feels like a month ago. Wardrobe balance is the next real payday, whenever it ships.",
+      "kind": "cashflow",
+      "to": "money",
+      "mentions": [
+        "Hewitts",
+        "wardrobe"
+      ]
+    },
+    {
+      "d": 47,
+      "h": 13,
+      "m": 30,
+      "body": "In a hurry to get wardrobe doors hung before I lose the light and the week, I drilled the hinge cups 2mm proud and blew through the veneer. One door scrapped, re-cutting a new blank tomorrow. Costly half hour.",
+      "kind": "mistake",
+      "to": "workshop",
+      "mentions": [
+        "wardrobe"
+      ]
+    },
+    {
+      "d": 48,
+      "h": 10,
+      "m": 0,
+      "body": "Re-cut the wardrobe door blank from the spare ply. Glad I had it. Slower but right.",
+      "kind": "build",
+      "to": "workshop",
+      "mentions": [
+        "wardrobe"
+      ]
+    },
+    {
+      "d": 49,
+      "h": 8,
+      "m": 30,
+      "body": "Craft fair day at the market hall. Decent footfall. Sold all three stools and most of the boards, 280 cash in the tin. Good day out, chatted to a turner with a nice stall.",
+      "kind": "event",
+      "to": "workshop",
+      "mentions": [
+        "craft fair"
+      ]
+    },
+    {
+      "d": 49,
+      "h": 18,
+      "m": 0,
+      "body": "Fair takings 280, all cash. Small but it's the first money in for two weeks and it'll get me to the wardrobe balance. Banked it.",
+      "kind": "cashflow",
+      "to": "money",
+      "mentions": [
+        "craft fair",
+        "wardrobe"
+      ]
+    },
+    {
+      "d": 50,
+      "h": 11,
+      "m": 0,
+      "body": "Wardrobe doors hung and adjusted, runners in, soft-close working. Was meant to be a five week job, we're past seven. Reads done though.",
+      "kind": "build",
+      "to": "workshop",
+      "mentions": [
+        "wardrobe"
+      ]
+    },
+    {
+      "d": 51,
+      "h": 9,
+      "m": 40,
+      "body": "Delivered and fitted the wardrobe at the new builds. Couple delighted, no quibble about it running on. Balance invoiced, 1,400.",
+      "kind": "deliver",
+      "to": "workshop",
+      "mentions": [
+        "wardrobe couple",
+        "wardrobe"
+      ]
+    },
+    {
+      "d": 51,
+      "h": 16,
+      "m": 20,
+      "body": "Wardrobe balance paid same evening, 1,400. Account finally back in the black with room. First time it's felt easy in weeks.",
+      "kind": "paid",
+      "to": "money",
+      "mentions": [
+        "wardrobe couple",
+        "wardrobe"
+      ]
+    },
+    {
+      "d": 52,
+      "h": 10,
+      "m": 15,
+      "body": "New enquiry, a dining table for eight, oak, big job. Roughing a quote. Telling myself eight weeks this time and meaning it.",
+      "kind": "quote",
+      "to": "workshop",
+      "mentions": [
+        "dining table"
+      ]
+    },
+    {
+      "d": 52,
+      "h": 12,
+      "m": 30,
+      "body": "Wardrobe paid, so I detoured to the yard and bought a slab of elm I've no job for. Good stuff. It was there.",
+      "kind": "paid",
+      "to": "money",
+      "mentions": [
+        "wardrobe"
+      ]
+    },
+    {
+      "d": 53,
+      "h": 8,
+      "m": 0,
+      "body": "Greco's, the usual, dog under the table. New awning's up. Looks smart. Slow morning, earned it.",
+      "kind": "filler",
+      "to": "",
+      "mentions": [
+        "Greco's",
+        "dog"
+      ]
+    }
+  ]
+}
