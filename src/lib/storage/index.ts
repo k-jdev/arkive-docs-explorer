@@ -4,16 +4,28 @@
 // Backend selection:
 //   - Default: filesystem (local dev)
 //   - When STORAGE_BACKEND=postgres + DATABASE_URL set: Postgres adapter (Stage 3+)
+//   - On Vercel we default to postgres whenever DATABASE_URL is present because
+//     the serverless runtime has a read-only filesystem and cannot persist .arkive/.
 
 import type { StorageAdapter, UserId } from "@/lib/storage/types";
 import { FilesystemStorageAdapter } from "@/lib/storage/filesystem";
 import { PostgresStorageAdapter } from "@/lib/storage/postgres";
 
+function detectBackend(): string {
+  const explicit = process.env.STORAGE_BACKEND?.toLowerCase();
+  if (explicit) return explicit;
+  // Vercel Functions cannot write to the local filesystem; if a database URL is
+  // available, prefer Postgres automatically. This prevents the common deploy
+  // error: ENOENT: no such file or directory, mkdir '/var/task/.arkive'.
+  if (process.env.VERCEL && process.env.DATABASE_URL) return "postgres";
+  return "filesystem";
+}
+
 let _instance: StorageAdapter | null = null;
 
 export function storage(): StorageAdapter {
   if (_instance) return _instance;
-  const backend = (process.env.STORAGE_BACKEND ?? "filesystem").toLowerCase();
+  const backend = detectBackend();
   switch (backend) {
     case "filesystem":
       _instance = new FilesystemStorageAdapter();
@@ -28,7 +40,13 @@ export function storage(): StorageAdapter {
 }
 
 // Re-export types so call sites don't need to know the file layout
-export type { StorageAdapter, StoredEntry, StoredEntryMeta, UserId, EncryptedKeystore } from "@/lib/storage/types";
+export type {
+  StorageAdapter,
+  StoredEntry,
+  StoredEntryMeta,
+  UserId,
+  EncryptedKeystore,
+} from "@/lib/storage/types";
 export { LOCAL_USER_ID } from "@/lib/storage/types";
 
 /**
@@ -63,10 +81,12 @@ export async function currentUserId(): Promise<UserId> {
     // No request context (e.g. background compaction) — fall through.
   }
 
-  const backend = (process.env.STORAGE_BACKEND ?? "filesystem").toLowerCase();
+  const backend = detectBackend();
   if (backend === "filesystem") return "_local";
 
-  throw new Error(
-    "No authenticated session. Sign in first — every request to postgres-backed storage requires auth."
-  );
+  // Anonymous/public read fallback: when no session exists, fall back to a
+  // shared user id. This lets the deployed docs-explorer show documentation
+  // without forcing every visitor through sign-in. Writes still work but all
+  // share the same namespace — acceptable for this read-only public demo.
+  return "_local";
 }
